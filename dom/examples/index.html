@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning the DOM</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+        .active {
+            border: 2px solid blue;
+        }
+    
+        .warning {
+            border: 2px solid red;
+        }
+    
+        .hidden {
+            display: none;
+        }
+    
+        div {
+            border: 2px dashed lightgray;
+            padding: 15px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <p id="para1">This is my first paragraph.</p>
+    <p id="para2">This is my second paragraph.</p>
+    <ul class="list">
+        <li>Golden Girls</li>
+        <li>Archer</li>
+        <li>Ricky and Morty</li>
+        <li> The Crown </li>
+    </ul>
+    <img src="https://metiz.vn/static/assets/websites/images/Metiz_logo/METIZ_LOGO_WEB.png">
+    <!-- <div>Div 1</div>
+    <div class="active">Div 2</div> -->
+    <div>Div</div>
+   
+    <script src="./index.js"></script>
+    
+</body>
+</html>
