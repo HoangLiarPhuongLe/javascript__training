@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Table</title>
+    <style type="text/css">
+        body {margin: 30px;}
+    </style>  
+</head>
+<body>
+    <table id="myTable" border="1"></table>
+    <form>
+      <input type="button" onclick="createTable()" value="Create the table">
+    </form>
+    <script>
+        const createTable=()=>{
+            const table = document.getElementById('myTable');
+    
+            const tableRow = document.createElement('tr');
+            
+            
+            const data = document.createElement('td');
+            
+        
+            const content = document.createTextNode('cell'); 
+            
+        
+            data.appendChild(content);
+            tableRow.appendChild(data);
+            table.appendChild(tableRow);
+        }
+    </script>
+</body>
+</html>
