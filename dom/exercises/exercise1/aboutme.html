@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        .listitem {
+          color: red;
+        }
+      </style>
+</head>
+<body>
+    <h1>About Me</h1>
+  
+  <ul>
+    <li>Nickname: <span id="nickname"></span>
+    <li>Favorites:  <span id="favorites"></span>
+    <li>Hometown: <span id="hometown"></span>
+  </ul>
+
+   <script>
+      document.body.style.fontFamily="Arial, sans-serif";
+
+      const nickname=document.getElementById('nickname');
+      nickname.textContent="Le Hoang";
+      const favorites=document.getElementById('favorites');
+      favorites.textContent="Games";
+      const hometown=document.getElementById('hometown');
+      hometown.textContent="Da Nang";
+
+      const listItem=document.querySelectorAll('ul>li');
+      listItem.forEach((item)=>{
+        // console.log(item);
+        item.className='listitem';
+      })
+
+      const img=document.createElement('img');
+      img.src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo-small.png";
+      document.body.appendChild(img);
+   </script>
+</body>
+</html>
