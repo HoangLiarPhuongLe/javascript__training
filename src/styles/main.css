@@ -1,4 +1,2 @@
-@import "abstracts/variables.css";
-
-@import "base/reset.css";
-@import "base/typography.css";
+@import "abstracts/index.css";
+@import "base/index.css";
