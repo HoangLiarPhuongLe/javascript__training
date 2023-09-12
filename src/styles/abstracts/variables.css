@@ -1,0 +1,30 @@
+:root {
+  --primary-font: "Roboto";
+
+  /* Font-Weight */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font-Size */
+  --font-size-xxs: 11px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 17px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 32px;
+
+  /* Colors */
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-text-color: rgba(0, 0, 0, 0.87);
+  --secondary-text-color: rgba(0, 0, 0, 0.54);
+  --tertiary-text-color: rgba(0, 0, 0, 0.26);
+  --green-color: #2db84c;
+  --green-light-color: #00bc2a;
+  --red-light-color: #e51c23;
+  --blue-color: #039be5;
+  --light-grey-color: #f5f5f5;
+  --dark-grey-color: #707070;
+}
