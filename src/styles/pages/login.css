@@ -62,7 +62,7 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
-  margin-top: 49px;
+  cursor: pointer;
 }
 
 .login-form-redirect {
@@ -75,4 +75,15 @@
 .sign-up {
   color: var(--green-light-color);
   text-decoration-line: underline;
+}
+
+.error-message {
+  visibility: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.active {
+  visibility: visible;
+  color: var(--red-light-color);
 }

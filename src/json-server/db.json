@@ -1,0 +1,10 @@
+{
+    "accounts": [
+      { 
+        "id": 1, 
+        "email": "phuongle1@gmail.com", 
+        "password": "phuongle123" 
+      }
+    ]
+   
+}
