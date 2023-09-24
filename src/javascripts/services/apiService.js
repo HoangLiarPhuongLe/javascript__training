@@ -1,9 +1,9 @@
 class ApiService{
-    constructor(baseUrl,path){
-        this.baseUrl=baseUrl;
-        this.path= path;
+    constructor(baseUrl, path){
+        this.baseUrl = baseUrl;
+        this.path = path;
     }
-
+    
     async get() {
         try {
           const response = await fetch(`${this.baseUrl}${this.path}`);

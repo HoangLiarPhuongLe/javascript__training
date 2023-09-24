@@ -63,6 +63,8 @@
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   cursor: pointer;
+  margin-top: 29px;
+  margin-bottom: 15px;
 }
 
 .login-form-redirect {
@@ -78,12 +80,5 @@
 }
 
 .error-message {
-  visibility: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.active {
-  visibility: visible;
   color: var(--red-light-color);
 }

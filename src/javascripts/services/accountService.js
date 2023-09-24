@@ -1,16 +1,18 @@
 import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
+import { REGEX } from "../constants/constant";
 
 class AccountService{
     constructor(){
-        this.api= new ApiService(API_BASE_URL,'/accounts');
+        this.api = new ApiService(API_BASE_URL, '/accounts');
+        this.accountList;
         this.initAccountList();
     }
 
-    initAccountList= async()=>{
-        const data= await this.api.get();
-        this.accountList= this.parseData(data);
+    initAccountList = async () => {
+        const data = await this.api.get();
+        this.accountList = this.parseData(data);
     };
 
     /**
@@ -18,18 +20,25 @@ class AccountService{
     * @param {Array} data 
     * @returns {Array} array of Account object.
     */
-    parseData=(data)=>{
-        return data.map((account)=> new Account(account));
+    parseData = (data) => {
+        return data.map((account) => new Account(account));
     }
 
-    checkInput=({email,password})=>{
-        // Regular expression for email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        // Regular expression for password validation (at least 8 characters)
-        const passwordRegex = /^.{8,}$/;
-         
-        const isEmailValid= emailRegex.test(email);
-        const isPasswordValid= passwordRegex.test(password);
+    isRequired = (data) => {
+        for (const key in data) {
+            if (data[key].toString().trim() === "") {
+              return false;
+            }
+        }
+        
+        return true;
+    }
+
+    isValidForm = ({email, password}) => {
+       
+        const isEmailValid = REGEX.EMAIL.test(email);
+        const isPasswordValid = REGEX.PASSWORD.test(password);
+
  
         return isEmailValid && isPasswordValid;
     }
@@ -39,8 +48,8 @@ class AccountService{
     * @param {Object} - An object containing account credentials (email and password).
     * @returns {Boolean} True if the account is valid, otherwise false.
     */
-    checkAccount=({email,password})=>{
-        const validAccount = this.accountList.some((item)=>item.email == email && item.password==password)
+    isValidAccount = ({email, password}) => {
+        const validAccount = this.accountList.some((item) => item.email === email && item.password === password)
         return validAccount;
     }
 }

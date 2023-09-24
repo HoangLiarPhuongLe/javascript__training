@@ -4,8 +4,9 @@ import LoginView from "./views/loginView";
 
 class App {
     constructor(){}
+
     start(){
-         const loginController = new LoginController(new AccountService(),new LoginView());
+         const loginController = new LoginController(new AccountService(), new LoginView());
          loginController.init();
     }
 }

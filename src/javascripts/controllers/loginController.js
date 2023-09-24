@@ -1,11 +1,11 @@
 class LoginController{
-    constructor(service,view){
-        this.service=service;
-        this.view=view;
+    constructor(service, view){
+        this.service = service;
+        this.view = view;
     }
 
-    init=()=>{
-        this.view.addEventLogin(this.service.checkInput,this.service.checkAccount);
+    init = () => {
+        this.view.addEventLogin(this.service.isRequired, this.service.isValidForm, this.service.isValidAccount);
     }
 }
 
