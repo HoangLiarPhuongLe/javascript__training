@@ -1,4 +1,5 @@
-import { MESSAGE,ERROR_MESSAGE } from "../constants/constant";
+import { MESSAGE, ERROR_MESSAGE } from "../constants/message";
+import { isRequired, isValidForm } from "../helpers/validationForm";
 
 class LoginView{
     
@@ -8,7 +9,7 @@ class LoginView{
     }
 
     //----- EVENT LISTENER -----//
-    addEventLogin = (isRequired, isValidForm, isValidAccount) => {
+    addEventLogin = (isValidAccount) => {
         this.buttonElement?.addEventListener("click", async(e)=>{
             e.preventDefault();
 
@@ -17,43 +18,41 @@ class LoginView{
                 password: this.loginForm.password.value,
             }
 
-            const emailInput = document.getElementById("email");
-            const emailError = emailInput.nextElementSibling;
-            const passwordInput = document.getElementById("password");
-            const passwordError = passwordInput.nextElementSibling;
-            const buttonSubmit = document.getElementById("buttonSubmitLogin");
-            const errorCredentials = buttonSubmit.nextElementSibling;
+            const emailError = document.querySelector(".error-email");
+            const passwordError = document.querySelector(".error-password");
+            const errorCredentials = document.querySelector(".error-credentials");
 
-            if (isRequired(accountInput)) {
-                passwordError.textContent = "";
+            const errorMessages = [];
 
-                if(isValidForm(accountInput))
-                {
-                  emailError.textContent = "";
-
-                  if (isValidAccount(accountInput))
-                  {
-                    window.location.href = 'home.html';
-                  } 
-                  else {
-                    errorCredentials.classList.add("error-message");
-                    errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
-                  }
-                }
-                else {
-                  emailError.classList.add("error-message");
-                  emailError.textContent =  MESSAGE.INVALID_EMAIL;
-                }
+            if (!isRequired(accountInput)){
+              errorMessages.push(MESSAGE.EMAIL_REQUIRED, MESSAGE.PASSWORD_REQUIRED);
+            }
+            else if (!isValidForm(accountInput)){
+              errorMessages.push(MESSAGE.INVALID_EMAIL);
+            }
+            else if (!isValidAccount(accountInput)){
+              errorMessages.push(ERROR_MESSAGE.ERROR_CREDENTIALS);
             }
             else {
-              emailError.classList.add("error-message");
-              emailError.textContent = MESSAGE.EMAIL_REQUIRED;
-              passwordError.classList.add("error-message");
-              passwordError.textContent = MESSAGE.PASSWORD_REQUIRED;
+              window.location.href = 'home.html';
             }
-            
+
+            displayErrors(errorMessages);
+
+            function displayErrors(messages) {
+              emailError.classList.remove("error-message");
+              emailError.textContent = "";
+              passwordError.classList.remove("error-message");
+              passwordError.textContent = "";
+              messages.forEach((message, index) => {
+                const element = index === 0 ? emailError : passwordError;
+                element.classList.add("error-message");
+                element.textContent = message;
+              });
+            }
         })
     }
 }
 
 export default LoginView;   
+

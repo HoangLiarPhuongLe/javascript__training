@@ -2,13 +2,10 @@ import LoginController from "./controllers/loginController";
 import AccountService from "./services/accountService";
 import LoginView from "./views/loginView";
 
-class App {
-    constructor(){}
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginController = new LoginController(new AccountService(), new LoginView());
+      loginController.init();
+      console.log('app.js')
+});
 
-    start(){
-         const loginController = new LoginController(new AccountService(), new LoginView());
-         loginController.init();
-    }
-}
 
-export default App;

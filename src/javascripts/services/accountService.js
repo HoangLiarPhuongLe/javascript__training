@@ -1,7 +1,7 @@
 import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
-import { REGEX } from "../constants/constant";
+import { REGEX } from "../constants/config";
 
 class AccountService{
     constructor(){
@@ -22,25 +22,6 @@ class AccountService{
     */
     parseData = (data) => {
         return data.map((account) => new Account(account));
-    }
-
-    isRequired = (data) => {
-        for (const key in data) {
-            if (data[key].toString().trim() === "") {
-              return false;
-            }
-        }
-        
-        return true;
-    }
-
-    isValidForm = ({email, password}) => {
-       
-        const isEmailValid = REGEX.EMAIL.test(email);
-        const isPasswordValid = REGEX.PASSWORD.test(password);
-
- 
-        return isEmailValid && isPasswordValid;
     }
 
     /**

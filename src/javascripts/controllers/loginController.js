@@ -5,7 +5,7 @@ class LoginController{
     }
 
     init = () => {
-        this.view.addEventLogin(this.service.isRequired, this.service.isValidForm, this.service.isValidAccount);
+        this.view.addEventLogin(this.service.isValidAccount);
     }
 }
 
