@@ -8,6 +8,3 @@ export const MESSAGE = {
 export const ERROR_MESSAGE = {
     ERROR_CREDENTIALS: "Email or Password not correct. Please try again !"
 }
-
-
-

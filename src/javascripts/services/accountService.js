@@ -1,7 +1,6 @@
 import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
-import { REGEX } from "../constants/config";
 
 class AccountService{
     constructor(){
