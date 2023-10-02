@@ -1,5 +1,5 @@
 import { MESSAGE, ERROR_MESSAGE } from "../constants/message";
-import { validationForm } from "../helpers/validationForm";
+import { validate } from "../helpers/validationForm";
 
 class LoginView{
     
@@ -18,25 +18,45 @@ class LoginView{
                 password: this.loginForm.password.value,
             }
 
+            const inputs = validate(accountInput);
+            const isValidFields = this.isValidation(inputs);
+
             const errorCredentials = document.querySelector(".error-credentials");
 
-            if(validationForm(accountInput)){
-                if(isValidAccount(accountInput)){
-                    window.location.href = 'home.html';
-                }
-                else{
-                    errorCredentials.classList.add("error-message");
-                    errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
-                }
-            }
-            else{
+            if(!isValidFields){
                 errorCredentials.classList.remove("error-message");
                 errorCredentials.textContent = "";
             }
-
+            else if (!isValidAccount(accountInput)){
+                errorCredentials.classList.add("error-message");
+                errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
+            }
+            else {
+                window.location.href = 'home.html';
+            }            
         })
+    }
+
+    isValidation = (inputs) => {
+        let isValid = true;
+
+        inputs.forEach(input => {
+            const inputElement = this.loginForm[input.field];
+            const errorElement = inputElement.nextElementSibling;
+
+            if (input.isValid){
+                errorElement.classList.remove("erro-message");
+                errorElement.textContent = "";
+            }
+            else{
+                errorElement.classList.add("error-message");
+                errorElement.textContent = input.message;
+
+                isValid = false;
+            }
+        });
+        return isValid;
     }
 }
 
 export default LoginView;   
-

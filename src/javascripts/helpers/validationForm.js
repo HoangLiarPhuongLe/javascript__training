@@ -1,52 +1,51 @@
 import { REGEX } from "../constants/config";
 import { MESSAGE } from "../constants/message";
 
-export const validationForm = (data) => {
-    const emailError = document.querySelector(".error-email");
-    const passwordError = document.querySelector(".error-password");
+export const validate = (data) => {
+  
+  const fieldCheck = [];
 
-   isValid = true;
-
-   const fields = [
+  const loginFields = [
     {
-      name: 'email',
+      field: 'email',
       regex: REGEX.EMAIL,
       requiredMessage: MESSAGE.EMAIL_REQUIRED,
-      invalidMessage: MESSAGE.INVALID_EMAIL,
-      error: emailError 
+      invalidMessage: MESSAGE.INVALID_EMAIL
     },
     {
-      name: 'password',
+      field: 'password',
       regex: REGEX.PASSWORD,
       requiredMessage: MESSAGE.PASSWORD_REQUIRED,
-      invalidMessage: MESSAGE.INVALID_PASSWORD,
-      error: passwordError
+      invalidMessage: MESSAGE.INVALID_PASSWORD
     }
-   ]
+  ]
 
-   for ( const field of fields) {
-    const value = data[field.name];
-    const isValidField = field.regex.test(value);
-    const errorElement = field.error;
+  for ( const key in data){
+    const value = data[key];
+    const loginField = loginFields.find((field) => field.field === key)
+    const isValid = loginField.regex.test(value);
+    console.log(value);
 
     if(value.trim() === ''){
-      errorElement.classList.add("error-message");
-      errorElement.textContent = field.requiredMessage;
-      isValid = false;
+      fieldCheck.push({
+        field: key,
+        isValid: false,
+        message: loginField.requiredMessage
+      })
+    } else if(!isValid){
+      fieldCheck.push({
+        field: key,
+        isValid: false,
+        message: loginField.invalidMessage
+      })
     }
-
-    else if(!isValidField){
-      errorElement.classList.add("error-message");
-      errorElement.textContent = field.invalidMessage;
-      isValid = false;
-    } 
-
     else {
-      errorElement.classList.remove("error-message");
-      errorElement.textContent = "";
-    }
+      fieldCheck.push({
+        field:key,
+        isValid: true
+      })
+    } 
   }
 
-  return isValid;
-
+  return fieldCheck;
 }
