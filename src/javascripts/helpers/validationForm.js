@@ -20,11 +20,10 @@ export const validate = (data) => {
     }
   ]
 
-  for ( const key in data){
+  for (const key in data){
     const value = data[key];
     const loginField = loginFields.find((field) => field.field === key)
     const isValid = loginField.regex.test(value);
-    console.log(value);
 
     if(value.trim() === ''){
       fieldCheck.push({
@@ -38,8 +37,7 @@ export const validate = (data) => {
         isValid: false,
         message: loginField.invalidMessage
       })
-    }
-    else {
+    } else {
       fieldCheck.push({
         field:key,
         isValid: true

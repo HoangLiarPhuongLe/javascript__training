@@ -24,14 +24,10 @@ class LoginView{
             const errorCredentials = document.querySelector(".error-credentials");
 
             if(!isValidFields){
-                errorCredentials.classList.remove("error-message");
-                errorCredentials.textContent = "";
-            }
-            else if (!isValidAccount(accountInput)){
-                errorCredentials.classList.add("error-message");
-                errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
-            }
-            else {
+                this.clearErrorMessage(errorCredentials);
+            } else if (!isValidAccount(accountInput)){
+                this.showErrorMessage(errorCredentials,ERROR_MESSAGE.ERROR_CREDENTIALS);
+            } else {
                 window.location.href = 'home.html';
             }            
         })
@@ -45,17 +41,24 @@ class LoginView{
             const errorElement = inputElement.nextElementSibling;
 
             if (input.isValid){
-                errorElement.classList.remove("erro-message");
-                errorElement.textContent = "";
-            }
-            else{
-                errorElement.classList.add("error-message");
-                errorElement.textContent = input.message;
+                this.clearErrorMessage(errorElement);
+            } else {
+                this.showErrorMessage(errorElement,input.message);
 
                 isValid = false;
             }
         });
         return isValid;
+    }
+
+    showErrorMessage = (error,message) =>{
+        error.classList.add("error-message");
+        error.textContent = message;
+    }
+
+    clearErrorMessage = (error) => {
+        error.classList.remove("error-message");
+        error.textContent = "";
     }
 }
 
