@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "start": "parcel src/login.html",
+    "build": "parcel build src/login.html"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
+    "json-server": "^0.17.3",
     "parcel": "^2.9.3"
   }
 }
