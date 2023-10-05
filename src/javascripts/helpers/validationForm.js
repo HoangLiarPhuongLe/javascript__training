@@ -37,13 +37,7 @@ export const validate = (data) => {
         isValid: false,
         message: loginField.invalidMessage
       })
-    } else {
-      fieldCheck.push({
-        field:key,
-        isValid: true
-      })
     } 
   }
-
   return fieldCheck;
 }

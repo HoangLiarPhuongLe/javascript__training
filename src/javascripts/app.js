@@ -6,5 +6,3 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginController = new LoginController(new AccountService(), new LoginView());
   loginController.init();
 });
-
-

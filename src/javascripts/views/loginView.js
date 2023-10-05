@@ -1,16 +1,16 @@
-import { MESSAGE, ERROR_MESSAGE } from "../constants/message";
+import { ERROR_MESSAGE } from "../constants/message";
 import { validate } from "../helpers/validationForm";
 
 class LoginView{
     
     constructor(){
         this.loginForm = document.querySelector(".login-form");
-        this.buttonElement = document.querySelector(".login-form-button");
+        this.buttonSubmitElement = document.querySelector(".login-form-button");
     }
 
     //----- EVENT LISTENER -----//
     addEventLogin = (isValidAccount) => {
-        this.buttonElement?.addEventListener("click", async(e)=>{
+        this.buttonSubmitElement?.addEventListener("click", async(e)=>{
             e.preventDefault();
 
             const accountInput = {
@@ -18,47 +18,42 @@ class LoginView{
                 password: this.loginForm.password.value,
             }
 
-            const inputs = validate(accountInput);
-            const isValidFields = this.isValidation(inputs);
+            const errors = validate(accountInput);
 
             const errorCredentials = document.querySelector(".error-credentials");
-
-            if(!isValidFields){
-                this.clearErrorMessage(errorCredentials);
-            } else if (!isValidAccount(accountInput)){
-                this.showErrorMessage(errorCredentials,ERROR_MESSAGE.ERROR_CREDENTIALS);
+            const errorElements = document.querySelectorAll(".error-email, .error-password");
+           
+            if(errors.length > 0){
+                this.showErrorMessage(errors);
             } else {
-                window.location.href = 'home.html';
-            }            
+                this.clearErrorMessage(errorElements);
+                if(!isValidAccount(accountInput)){
+                    errorCredentials.classList.add("error-message");
+                    errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
+                } else {
+                    window.location.href = 'home.html';
+                }
+            }
         })
     }
 
-    isValidation = (inputs) => {
-        let isValid = true;
+    showErrorMessage = (errors) =>{
+        const errorElements = {
+            email: document.querySelector(".error-email"),
+            password: document.querySelector(".error-password"),
+        }
 
-        inputs.forEach(input => {
-            const inputElement = this.loginForm[input.field];
-            const errorElement = inputElement.nextElementSibling;
-
-            if (input.isValid){
-                this.clearErrorMessage(errorElement);
-            } else {
-                this.showErrorMessage(errorElement,input.message);
-
-                isValid = false;
-            }
-        });
-        return isValid;
+        errors.forEach((error) => {
+            errorElements[error.field].classList.add("error-message");
+            errorElements[error.field].textContent = error.message;
+        })
     }
 
-    showErrorMessage = (error,message) =>{
-        error.classList.add("error-message");
-        error.textContent = message;
-    }
-
-    clearErrorMessage = (error) => {
-        error.classList.remove("error-message");
-        error.textContent = "";
+    clearErrorMessage = (errorElements) => {
+        errorElements.forEach((errorElement) => {
+            errorElement.classList.remove("error-message");
+            errorElement.textContent = "";
+        })
     }
 }
 

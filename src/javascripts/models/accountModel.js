@@ -8,7 +8,6 @@ class Account {
     this.email = data.email;
     this.password = data.password;
   }
-  
 }
 
 export default Account;
