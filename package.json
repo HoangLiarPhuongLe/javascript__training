@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "parcel src/login.html",
-    "build": "parcel build src/login.html"
+    "start": "parcel ./src/*.html --no-cache --no-source-maps --dist-dir dist",
+    "build": "rm -rf dist && parcel build ./src/*.html --no-cache --no-source-maps --dist-dir dist"
   },
   "dependencies": {
     "uuid": "^9.0.0"

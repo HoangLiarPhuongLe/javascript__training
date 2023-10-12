@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Home page</title>
+</head>
+<body>
+    <header>
+      <button class="btn-add-transaction">add transaction</button>
+    </header>
+
+    <!-- Start contact list -->
+    <section class="transaction-list-container">
+      <div class="transaction-title">
+        <p class="transaction-title-text">transaction details</p>
+      </div>
+      <ul class="transaction-list">
+        
+      </ul>
+    </section>
+    <!-- End contact list -->
+
+    <!-- Add, delete transaction form -->
+    <div class="transaction">
+        <div class="transaction-header">
+            <p>Add transaction</p>
+        </div>
+        <form class="transaction-body">
+          <div class="transaction-input-fields">
+            <div>
+              <div class="input-field">
+                <label class="title">Date</label>
+                <input type="date" class="input-date" name="date"/>
+              </div>
+              <p class="error-date"></p>
+            </div>
+            <div>
+              <div class="input-field">
+                <label class="title">Category</label>
+                <div class="category-form">
+                  <img src="assets/images/icon_not_selected.svg" alt="Question Icon" >
+                  <input type="text" name="category" class="input-category" placeholder="Select category" />
+                </div>
+              </div>
+              <p class="error-category"></p>
+            </div>
+            <div>
+              <div class="input-field">
+                <label class="title">Amount</label>
+                <input type="number" name="outflow" class="input-amount" value="0"/>
+              </div>
+            <p class="error-amount"></p>
+            </div>
+          </div>
+          <div>
+            <div class="transaction-note">
+              <label class="title">Note</label>
+              <input type="text" name="note" class="input-note" placeholder="Note" />
+            </div>
+            <p class="error-note"></p>
+          </div>
+          <div class="action-form">
+            <button class="btn-cancel">cancel</button>
+            <button class="btn-save">save</button>
+          </div>
+        </form>
+    </div>
+
+     <!-- Start snackbar -->
+    <div class="snackbar">
+      <p class="snackbar-message">ADD TRANSACTION SUCCESS</p>
+    </div>
+    <!-- End snackbar -->
+
+    <script type="module" src="./javascripts/app.js"></script>
+</body>
+</html>
