@@ -1,5 +1,3 @@
-import { API_BASE_URL } from "../constants/urls";
-
 class ApiService{
     constructor(baseUrl, path){
         this.baseUrl = baseUrl;
@@ -20,11 +18,11 @@ class ApiService{
     }
 
     async addTransaction(transaction) {
-      // Log the JSON representation of the wallet object
+      // Log the JSON representation of the transaction object
       console.log("JSON:", JSON.stringify(transaction));
     
       try {
-        // Make a POST request to the API endpoint with the wallet object as the request body
+        // Make a POST request to the API endpoint with the transaction object as the request body
         const response = await fetch(`${this.baseUrl}${this.path}`, {
           method: "POST",
           headers: {
@@ -42,8 +40,7 @@ class ApiService{
         console.error("Error adding transaction:", error);
         throw new Error("Failed to add transaction.");
       }
-    }
-    
+    } 
 }
 
 export default ApiService;

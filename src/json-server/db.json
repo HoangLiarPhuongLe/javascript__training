@@ -9,135 +9,46 @@
   "wallet": [],
   "transaction": [
     {
-      "category": "Ăn uống",
-      "date": "2023-10-28",
-      "note": "Tiền đi chơi hôm qua",
-      "amount": "50",
+      "category": "Cà Phê",
+      "date": "2023-10-21",
+      "note": "tiền cà phê thứ 2",
+      "outflow": "3.000.000",
       "id": 1
     },
     {
-      "category": "cafe",
-      "date": "2023-10-21",
-      "note": "tiền cafe",
-      "amount": "50",
-      "id": 2
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-21",
-      "note": "tiền ăn sáng",
-      "amount": "5",
-      "id": 3
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-27",
-      "note": "đi ăn trưa",
-      "amount": "6",
-      "id": 4
-    },
-    {
-      "category": "",
-      "date": "",
-      "note": "",
-      "amount": "60",
-      "id": 5
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-14",
-      "note": "",
-      "amount": "80",
-      "id": 6
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-07",
-      "note": "dfgdfg",
-      "amount": "6",
-      "id": 7
-    },
-    {
-      "category": "ưerwe",
-      "date": "2023-10-14",
-      "note": "ưerwer",
-      "amount": "6",
-      "id": 8
-    },
-    {
-      "category": "ưerwe",
-      "date": "2023-10-14",
-      "note": "sdfsdf",
-      "amount": "30",
-      "id": 9
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-21",
-      "note": "ăn vặt",
-      "amount": "4",
-      "id": 10
-    },
-    {
-      "category": "cà phê",
-      "date": "2023-10-24",
-      "note": "ăn vặt",
-      "amount": "5000",
-      "id": 11
-    },
-    {
-      "category": "cà phê",
-      "date": "2023-10-21",
-      "note": "đi ăn trưa",
-      "id": 12
-    },
-    {
-      "category": "Ăn uống",
-      "date": "2023-10-14",
-      "note": "ăn khuya",
-      "id": 13
-    },
-    {
+      "id": 2,
       "category": "đi du lịch",
-      "date": "2023-10-25",
-      "note": "đà lạt",
-      "id": 14
-    },
-    {
-      "category": "ăn vặt",
-      "date": "2023-10-27",
-      "note": "đi chơi với bạn bên Mỹ",
-      "id": 15
-    },
-    {
-      "category": "cà phê",
       "date": "2023-10-14",
-      "note": "Tiền đi chơi hôm qua",
-      "id": 16
+      "note": "đi Châu Âu",
+      "outflow": "5000000"
     },
     {
-      "category": "cà phê",
-      "date": "2023-10-21",
-      "note": "dfgdfg",
-      "id": 17
-    },
-    {
-      "category": "cà phê",
-      "date": "2023-10-21",
-      "note": "đi ăn trưa",
-      "id": 18
-    },
-    {
-      "category": "ăn vặt",
+      "id": 3,
+      "category": "Ăn Vặt",
       "date": "2023-10-28",
-      "note": "tiền ăn vặt hôm qua",
-      "id": 19
+      "note": "Nem chua rán",
+      "outflow": "100000"
     },
     {
+      "id": 4,
+      "category": "đi du lịch",
+      "date": "2023-10-28",
+      "note": "Tiền đi chơi hôm qua",
+      "outflow": "50000"
+    },
+    {
+      "id": 5,
       "category": "Ăn uống",
-      "date": "2023-10-27",
-      "note": "tiền ăn sáng",
-      "id": 20
+      "date": "2023-10-25",
+      "note": "Đi ăn tối",
+      "outflow": "2000000"
+    },
+    {
+      "id": 6,
+      "category": "Ăn uống",
+      "date": "2023-10-21",
+      "note": "Tiệc liên hoan",
+      "outflow": "600000"
     }
   ]
 }

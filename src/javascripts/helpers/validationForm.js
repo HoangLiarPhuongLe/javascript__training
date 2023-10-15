@@ -64,8 +64,15 @@ export const validateTransaction = (data) => {
     },
   ]
 
-  for(const key in data){
-    const value = data[key];
+  const transactionCheck = {
+    category: data.category,
+    date: data.date,
+    outflow: data.outflow,
+    note: data.note
+  }
+
+  for(const key in transactionCheck){
+    const value = transactionCheck[key];
     const transactionField = transactionFields.find((field) => field.field === key)
 
     if(value.trim() === ''){

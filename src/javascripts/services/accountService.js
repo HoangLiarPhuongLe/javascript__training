@@ -1,6 +1,9 @@
+import { DATA } from "../constants/config";
 import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
+import { localStorageService } from "./localStorageService";
+
 
 class AccountService{
     constructor(){
@@ -30,6 +33,10 @@ class AccountService{
     */
     isValidAccount = ({email, password}) => {
         const validAccount = this.accountList.some((item) => item.email === email && item.password === password)
+        console.log(validAccount);
+        if(validAccount){
+            localStorageService.saveLocalStorage(DATA.ACCOUNT, email);
+        }
         return validAccount;
     }
 }

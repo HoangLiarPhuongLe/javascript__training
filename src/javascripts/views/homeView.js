@@ -1,21 +1,7 @@
-import Template from "../templates/template";
-
 class HomeView {
-    constructor(){
+    constructor() {
         this.transactionListEl = document.querySelector(".transaction-list")
         this.addBtnEL = document.querySelector(".btn-add-transaction");
-    }
-
-    //----- RENDERING -----//
-    renderTransactionList(transactions){
-        transactions.forEach(transaction =>{
-            this.renderTransaction(transaction);
-        })
-    }
-
-    renderTransaction(transaction){
-        const transactionTemplate = Template.transaction(transaction);
-        this.transactionListEl.innerHTML += transactionTemplate;
     }
 
     //----- EVENT HANDLER -----//
