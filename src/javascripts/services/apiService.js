@@ -1,5 +1,3 @@
-import { API_BASE_URL } from "../constants/urls";
-
 class ApiService{
     constructor(baseUrl, path){
         this.baseUrl = baseUrl;
@@ -42,8 +40,7 @@ class ApiService{
         console.error("Error adding transaction:", error);
         throw new Error("Failed to add transaction.");
       }
-    }
-    
+    } 
 }
 
 export default ApiService;

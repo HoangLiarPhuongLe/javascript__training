@@ -1,10 +1,10 @@
 class Transaction {
-    constructor(data){
+    constructor(data) {
         this.id = data.id;
         this.category = data.category;
         this.date = data.date;
         this.note = data.note;
-        this.amount = data.amount;
+        this.outflow = data.outflow;
     }
 }
 export default Transaction;

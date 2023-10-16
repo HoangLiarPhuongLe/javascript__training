@@ -9,6 +9,9 @@ class TransactionService {
         this.initTransactionList();
     }
 
+    /**
+     * Initializing the Transactions object
+     */
     initTransactionList = async () => {
         const data = await this.api.get();
         this.transactionList = this.parseData(data);
