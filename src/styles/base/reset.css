@@ -130,6 +130,12 @@ table {
 a {
   text-decoration: none;
 }
+input,
+select {
+  border: none;
+  outline: none;
+  background: none;
+}
 
 /* Customize reset */
 

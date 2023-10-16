@@ -18,8 +18,6 @@ class TransactionController {
 
     async initTransactions(){
         await this.service.transactionService.initTransactionList();
-        const transactions = await this.service.transactionService.getTransactions();
-        await this.view.homeView.renderTransactionList(transactions);
         this.view.homeView.addEventRenderPopup(this.addTransaction);
     }
 
@@ -28,9 +26,9 @@ class TransactionController {
         this.view.snackbar.showSnackBar('succes', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCES);
     }
 
-    //----- MODAL CONTROLLER -----//
+    //----- POPUP CONTROLLER -----//
     /**
-     * Initializing the Relation interface and event handlers
+     * Initializing the Popup interface and event handlers
      */
 
     async initPopup(){

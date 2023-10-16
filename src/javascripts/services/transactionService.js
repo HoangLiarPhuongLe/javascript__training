@@ -13,16 +13,24 @@ class TransactionService {
         const data = await this.api.get();
         this.transactionList = this.parseData(data);
     }
-
+    
+    /**
+     * Parsing data from JSON object to list of Transaction object
+     * @param {JSON} data
+     */
     parseData = (data) => {
         return data.map((item) => new Transaction(item));
     }
 
-    getTransactions(){
+    /**
+     * Get Transaction objects list
+     * @returns {array}
+     */
+    getTransactions() {
         return this.transactionList;
     }
 
-    addTransaction = async(data) =>{
+    addTransaction = async(data) => {
         const transaction = new Transaction(data);
         console.log(transaction);
         await this.api.addTransaction(transaction);
