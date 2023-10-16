@@ -3,7 +3,6 @@ import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
 import { localStorageService } from "./localStorageService";
-
 class AccountService{
     constructor(){
         this.api = new ApiService(API_BASE_URL, '/accounts');
