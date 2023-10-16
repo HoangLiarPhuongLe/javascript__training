@@ -29,9 +29,9 @@ class TransactionView{
             }
 
             const errors = validateTransaction(transaction);
-            const errorElements = document.querySelectorAll(".error-date, .error-category, .error-amount, .error-note");
-
-            if(errors.length>0){
+            const errorElements = document.querySelectorAll(".error");
+            
+            if(errors.length > 0){
                 this.showErrorMessage(errors)
             } else{
                 this.clearErrorMessage(errorElements);

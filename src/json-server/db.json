@@ -49,6 +49,13 @@
       "date": "2023-10-21",
       "note": "Tiệc liên hoan",
       "outflow": "600000"
+    },
+    {
+      "category": "Ăn uống",
+      "date": "2023-10-26",
+      "note": "Tiền đi ăn liên hoan",
+      "outflow": "5000000",
+      "id": 7
     }
   ]
 }
