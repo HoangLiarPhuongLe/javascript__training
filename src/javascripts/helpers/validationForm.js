@@ -64,21 +64,13 @@ export const validateTransaction = (data) => {
     },
   ]
 
-  const transactionCheck = {
-    category: data.category,
-    date: data.date,
-    outflow: data.outflow,
-    note: data.note
-  }
-
-  for(const key in transactionCheck){
-    const value = transactionCheck[key];
-    const transactionField = transactionFields.find((field) => field.field === key)
+  for(const field of transactionFields){
+    const value = data[field.field];
 
     if(value.trim() === ''){
       fieldCheck.push({
-        field: key,
-        message: transactionField.requiredMessage
+        field: field.field,
+        message: field.requiredMessage
       })
     }
   }
