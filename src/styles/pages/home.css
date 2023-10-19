@@ -181,3 +181,127 @@
   opacity: 1;
   visibility: visible;
 }
+
+.transaction-list-container {
+  margin: 31.5px auto;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.12);
+  width: 664px;
+  height: 353px;
+}
+
+.transaction-title-text {
+  color: #2db84c;
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: var(--font-Weight-normal);
+  line-height: 16px; /* 114.286% */
+  text-transform: uppercase;
+}
+
+.transaction-title {
+  width: 664px;
+  height: 68px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-top: 30px;
+}
+
+.transaction-detail {
+  display: flex;
+  width: 664px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  height: 123px;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 664px;
+  height: 69px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.transaction-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.datetime {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+}
+
+.date-text {
+  color: rgba(0, 0, 0, 0.87);
+  font-family: var(--primary-font);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px; /* 50% */
+}
+
+.daymonthyear {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.daymonthyear-text {
+  color: #333;
+  font-family: var(--primary-font);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 136.364% */
+  text-transform: capitalize;
+}
+
+.note-text {
+  color: black;
+  font-family: var(--primary-font);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 136.364% */
+  text-transform: capitalize;
+}
+
+.amount-text {
+  color: #e51c23;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+}
+
+.total-amount-text {
+  color: rgba(0, 0, 0, 0.87);
+  text-align: right;
+  font-family: var(--primary-font);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 88.235% */
+}
+
+.category-text {
+  color: rgba(0, 0, 0, 0.87);
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}

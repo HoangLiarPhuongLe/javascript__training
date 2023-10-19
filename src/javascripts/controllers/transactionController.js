@@ -17,6 +17,8 @@ class TransactionController {
      */
     async initTransactions() {
         await this.service.transactionService.initTransactionList();
+        const transactions = this.service.transactionService.getTransactions();
+        await this.view.homeView.renderTransactionList(transactions);
         this.view.homeView.addEventRenderPopup(this.addTransaction);
     }
 
