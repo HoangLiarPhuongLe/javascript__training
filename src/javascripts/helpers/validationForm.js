@@ -49,22 +49,18 @@ export const validateTransaction = (data) => {
     {
       field: 'category',
       requiredMessage: MESSAGE.CATEGORY_REQUIRED,
-      nullMessage: MESSAGE.CATEGORY_NULL
     },
     {
       field: 'date',
       requiredMessage: MESSAGE.DATE_REQUIRED,
-      nullMessage: MESSAGE.DATE_NULL
     },
     {
       field: 'outflow',
       requiredMessage: MESSAGE.AMOUNT_REQUIRED,
-      nullMessage: MESSAGE.AMOUNT_NULL
     },
     {
       field: 'note',
       requiredMessage: MESSAGE.NOTE_REQUIRED,
-      nullMessage: MESSAGE.NOTE_NULL
     },
   ]
 
