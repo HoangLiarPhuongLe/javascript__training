@@ -66,7 +66,7 @@ export const validateTransaction = (data) => {
 
   for(const field of transactionFields){
    
-    if (!data[field.field]){
+    if (!data[field.field] && !data[field.field].trim()){
       fieldCheck.push({
         field: field.field,
         message: field.requiredMessage
