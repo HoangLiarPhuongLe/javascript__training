@@ -4,16 +4,27 @@ class TransactionView{
     constructor(){
         this.transactionElement = document.querySelector(".transaction");
         this.transactionBodyElement = document.querySelector(".transaction-body");
+        this.overlayElement = document.querySelector(".overlay");
         this.buttonSaveElement = document.querySelector(".btn-save");
     }
 
     //----- RENDERING -----//
     renderPopup(){
         this.transactionElement.classList.add("transaction-active");
+        this.overlayElement.classList.add("overlay-active");
     }
 
     closePopup(){
         this.transactionElement.classList.remove("transaction-active");
+        this.overlayElement.classList.remove("overlay-active");
+    }
+
+    resetPopup(){
+        const inputs = this.transactionBodyElement.querySelectorAll('input');
+
+        inputs.forEach((input) => {
+            input.value = " ";
+        })
     }
 
     //----- EVENT LISTENER -----//
@@ -22,10 +33,11 @@ class TransactionView{
             e.preventDefault();
 
             const transaction = {
+                id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
                 date: this.transactionBodyElement.date.value,
+                outflow: this.transactionBodyElement.outflow.value,
                 note: this.transactionBodyElement.note.value,
-                outflow: this.transactionBodyElement.outflow.value
             }
 
             const errors = validateTransaction(transaction);
@@ -37,6 +49,7 @@ class TransactionView{
                 this.clearErrorMessage(errorElements);
                 await addTransaction(transaction);
                 this.closePopup();
+                this.resetPopup();
             }
         })
     }
@@ -45,7 +58,7 @@ class TransactionView{
         const errorElements = {
             date: document.querySelector(".error-date"),
             category: document.querySelector(".error-category"),
-            amount: document.querySelector(".error-amount"),
+            outflow: document.querySelector(".error-amount"),
             note: document.querySelector(".error-note")
         }
 

@@ -1,5 +1,7 @@
+import { DATA } from "../constants/config";
 import { ERROR_MESSAGE } from "../constants/message";
 import { validate } from "../helpers/validationForm";
+import { localStorageService } from "../services/localStorageService";
 
 class LoginView{
     
@@ -32,6 +34,7 @@ class LoginView{
                     errorCredentials.textContent = ERROR_MESSAGE.ERROR_CREDENTIALS;
                 } else {
                     window.location.href = 'home.html';
+                    this.saveEmailToLocalStorage(accountInput.email);
                 }
             }
         })
@@ -54,6 +57,10 @@ class LoginView{
             errorElement.classList.remove("error-message");
             errorElement.textContent = "";
         })
+    }
+
+    saveEmailToLocalStorage = (email) => {
+        localStorageService.saveLocalStorage(DATA.ACCOUNT, email);
     }
 }
 
