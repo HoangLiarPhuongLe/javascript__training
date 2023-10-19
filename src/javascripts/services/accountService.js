@@ -1,7 +1,6 @@
 import { API_BASE_URL } from "../constants/urls";
 import Account from "../models/accountModel";
 import ApiService from "./apiService";
-
 class AccountService{
     constructor(){
         this.api = new ApiService(API_BASE_URL, '/accounts');
@@ -29,8 +28,8 @@ class AccountService{
     * @returns {Boolean} True if the account is valid, otherwise false.
     */
     isValidAccount = ({email, password}) => {
-        const validAccount = this.accountList.some((item) => item.email === email && item.password === password)
-        return validAccount;
+        const isAccountValid = this.accountList.some((item) => item.email === email && item.password === password)
+        return isAccountValid;
     }
 }
 

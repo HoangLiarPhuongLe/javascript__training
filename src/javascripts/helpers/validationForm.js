@@ -41,3 +41,37 @@ export const validate = (data) => {
   }
   return fieldCheck;
 }
+
+export const validateTransaction = (data) => {
+  const fieldCheck = [];
+
+  const transactionFields = [
+    {
+      field: 'category',
+      requiredMessage: MESSAGE.CATEGORY_REQUIRED,
+    },
+    {
+      field: 'date',
+      requiredMessage: MESSAGE.DATE_REQUIRED,
+    },
+    {
+      field: 'outflow',
+      requiredMessage: MESSAGE.AMOUNT_REQUIRED,
+    },
+    {
+      field: 'note',
+      requiredMessage: MESSAGE.NOTE_REQUIRED,
+    },
+  ]
+
+  for(const field of transactionFields){
+   
+    if (!data[field.field] && !data[field.field].trim()){
+      fieldCheck.push({
+        field: field.field,
+        message: field.requiredMessage
+      })
+    } 
+  }
+  return fieldCheck;
+}

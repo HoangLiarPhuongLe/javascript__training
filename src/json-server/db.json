@@ -1,9 +1,54 @@
 {
-    "accounts": [
-      { 
-        "id": 1, 
-        "email": "phuongle1@gmail.com", 
-        "password": "phuongle123" 
-      }
-    ]
+  "accounts": [
+    {
+      "id": 1,
+      "email": "phuongle1@gmail.com",
+      "password": "phuongle123"
+    }
+  ],
+  "wallet": [],
+  "transaction": [
+    {
+      "category": "Cà Phê",
+      "date": "2023-10-21",
+      "note": "tiền cà phê thứ 2",
+      "outflow": "3.000.000",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "category": "đi du lịch",
+      "date": "2023-10-14",
+      "note": "đi Châu Âu",
+      "outflow": "5000000"
+    },
+    {
+      "id": 3,
+      "category": "Ăn Vặt",
+      "date": "2023-10-28",
+      "note": "Nem chua rán",
+      "outflow": "100000"
+    },
+    {
+      "id": 4,
+      "category": "đi du lịch",
+      "date": "2023-10-28",
+      "note": "Tiền đi chơi hôm qua",
+      "outflow": "50000"
+    },
+    {
+      "id": 5,
+      "category": "Ăn uống",
+      "date": "2023-10-25",
+      "note": "Đi ăn tối",
+      "outflow": "2000000"
+    },
+    {
+      "id": 6,
+      "category": "Ăn uống",
+      "date": "2023-10-21",
+      "note": "Tiệc liên hoan",
+      "outflow": "600000"
+    }
+  ]
 }
