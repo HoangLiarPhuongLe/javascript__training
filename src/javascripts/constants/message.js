@@ -6,7 +6,11 @@ export const MESSAGE = {
     DATE_REQUIRED: "Date is required",
     CATEGORY_REQUIRED: "Category is required",
     AMOUNT_REQUIRED: "Amount is required",
-    NOTE_REQUIRED: "Note is required"
+    NOTE_REQUIRED: "Note is required",
+    DATE_UNDEFINED: "Date is undefined",
+    CATEGORY_UNDEFINED: "Category is undefined",
+    AMOUNT_UNDEFINED: "Amount is undefined",
+    NOTE_UNDEFINED: "Note is undefined"
 }
 
 export const ERROR_MESSAGE = {
