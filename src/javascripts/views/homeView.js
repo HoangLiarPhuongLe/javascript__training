@@ -1,12 +1,12 @@
 class HomeView {
     constructor() {
         this.transactionListEl = document.querySelector(".transaction-list")
-        this.addBtnEL = document.querySelector(".btn-add-transaction");
+        this.addBtnEl = document.querySelector(".btn-add-transaction");
     }
 
     //----- EVENT HANDLER -----//
     addEventRenderPopup = (handler) => {
-        this.addBtnEL.addEventListener("click", () => {
+        this.addBtnEl.addEventListener("click", () => {
             handler();
         });
     }

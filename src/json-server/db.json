@@ -49,27 +49,6 @@
       "date": "2023-10-21",
       "note": "Tiệc liên hoan",
       "outflow": "600000"
-    },
-    {
-      "id": 7,
-      "category": "Ăn Uống",
-      "date": "2023-10-27",
-      "note": "Tiền đi nhậu",
-      "outflow": "5000000"
-    },
-    {
-      "id": 8,
-      "category": "Đi Cà Phê",
-      "date": "2023-10-26",
-      "note": "Đi với bạn bè",
-      "outflow": "25000"
-    },
-    {
-      "id": 9,
-      "category": "Đi du lịch",
-      "date": "2023-10-30",
-      "note": "Đi Sapa",
-      "outflow": "6000000"
     }
   ]
 }

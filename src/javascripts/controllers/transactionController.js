@@ -15,7 +15,6 @@ class TransactionController {
     /**
      * Initializing the Transaction interface and event handlers
      */
-
     async initTransactions() {
         await this.service.transactionService.initTransactionList();
         this.view.homeView.addEventRenderPopup(this.addTransaction);
@@ -30,7 +29,6 @@ class TransactionController {
     /**
      * Initializing the Popup interface and event handlers
      */
-
     async initPopup() {
         this.view.transactionView.addEventAddTransaction(this.saveTransaction);
     }
