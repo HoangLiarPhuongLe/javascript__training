@@ -69,19 +69,13 @@ export const validateTransaction = (data) => {
   ]
 
   for(const field of transactionFields){
-    const value = data[field.field];
-
+   
     if (!data[field.field]){
-      fieldCheck.push({
-        field: field.field,
-        message: field.nullMessage
-      })
-    } else if(value.trim() === ''){
       fieldCheck.push({
         field: field.field,
         message: field.requiredMessage
       })
-    }
+    } 
   }
   return fieldCheck;
 }
