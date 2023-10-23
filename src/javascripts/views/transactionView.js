@@ -36,7 +36,7 @@ class TransactionView{
                 id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
                 date: this.transactionBodyElement.date.value,
-                outflow: this.transactionBodyElement.outflow.value,
+                outflow: parseInt(this.transactionBodyElement.outflow.value),
                 note: this.transactionBodyElement.note.value,
             }
 

@@ -12,15 +12,29 @@
       "category": "Cà Phê",
       "date": "2023-10-21",
       "note": "tiền cà phê thứ 2",
-      "outflow": "3.000.000",
+      "outflow": -30000,
       "id": 1
     },
     {
-      "id": 2,
-      "category": "đi du lịch",
-      "date": "2023-10-14",
-      "note": "đi Châu Âu",
-      "outflow": "5000000"
+      "id": 4,
+      "category": "Ăn Uống",
+      "date": "2023-10-25",
+      "note": "Tiền cf CN",
+      "outflow": -25000
+    },
+    {
+      "id": 5,
+      "category": "Ăn Uống",
+      "date": "2023-10-25",
+      "note": "Cà Phê Muối",
+      "outflow": -50000
+    },
+    {
+      "id": 6,
+      "category": "Đi du lịch",
+      "date": "2023-10-30",
+      "note": "đi Đà Lạt",
+      "outflow": -5000000
     }
   ]
 }

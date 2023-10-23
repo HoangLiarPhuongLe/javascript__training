@@ -1,3 +1,5 @@
+import { formatNumber } from "../helpers/helpers"
+
 class Template {
     /**
      * Constructor of Template object
@@ -10,14 +12,7 @@ class Template {
      */
 
     static transaction = (transaction) => `
-        <li class="transaction-detail" data-id="${transaction.id}">
-          <div class="transaction-info">
-            <div class="transaction-category">
-              <img src="assets/images/dollaricon.svg"/>
-              <p class="category-text">${transaction.category}</p>
-            </div>
-            <p class="total-amount-text">-$ ${transaction.outflow}</p>
-          </div>
+        <div class="transaction-detail">
           <div class="transaction-info">
             <div class="datetime">
               <p class="date-text">${new Date(transaction.date).getDate()}</p>
@@ -30,10 +25,46 @@ class Template {
                 <p class="note-text">${transaction.note}</p>
                </div>
             </div>
-            <p class="amount-text">-$ ${transaction.outflow}</p>
+            <p class="amount-${transaction.outflow > 0 ? 'income' : 'outflow'}">${transaction.outflow >= 0 ? '+' : '-'}$ ${formatNumber(
+              Math.abs(transaction.outflow),
+            )}</p>
           </div>
-        </li>
+        </div>
         `;
+    static category = (category, transactions, totalOutFlow) => `
+      <li>
+        <div class="transaction-category">
+          <div class="category-header">
+            <img src="assets/images/dollaricon.svg"/>
+            <div>
+              <p class="category-text">${category}</p>
+              <p class="quantity-transactions">${transactions.length} Transactions</p>
+            </div>
+          </div>
+          <p class="total-amount-text">${
+            totalOutFlow >= 0 ? '+' : '-'
+          }$ ${formatNumber(Math.abs(totalOutFlow))}</p>
+        </div>
+        <ul class="transaction-list">
+          ${transactions.map(transaction => Template.transaction(transaction))}
+        </ul>
+      </li>
+      <div class="gap"></div>
+      `;
+
+    static balance = (inflow, outflow) => `
+      <div class="inflow">
+        <p class="flow-text">Inflow</p>
+        <span class="amount-income">+ ${formatNumber(inflow)}</span>
+      </div>
+      <div class="outflow">
+        <p class="flow-text">Outflow</p>
+        <span class="amount-outflow">${formatNumber(outflow)}</span>
+      </div>
+      <div class="balance">
+        <span class="amount">${formatNumber(inflow + outflow)}</span>
+      </div>
+    `;
 }
 
 export default Template;
