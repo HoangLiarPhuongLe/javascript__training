@@ -1,0 +1,26 @@
+.snackbar {
+  opacity: 0;
+  visibility: hidden;
+  padding: 8px 18px;
+  border-radius: 16px;
+
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.snackbar-success {
+  background-color: var(--green-color);
+}
+
+.snackbar-warning {
+  background-color: var(--red-light-color);
+}
+
+.snackbar-show {
+  opacity: 1;
+  visibility: visible;
+}

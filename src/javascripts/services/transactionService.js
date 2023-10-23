@@ -36,6 +36,7 @@ class TransactionService {
     addTransaction = async(data) => {
         const transaction = new Transaction(data);
         await this.api.addTransaction(transaction);
+        this.transactionList.push(transaction);
     }
 }
 
