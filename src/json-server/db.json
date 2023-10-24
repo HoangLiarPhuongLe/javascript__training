@@ -12,43 +12,57 @@
       "category": "Cà Phê",
       "date": "2023-10-21",
       "note": "tiền cà phê thứ 2",
-      "outflow": "3.000.000",
+      "outflow": -30000,
       "id": 1
     },
     {
-      "id": 2,
-      "category": "đi du lịch",
-      "date": "2023-10-14",
-      "note": "đi Châu Âu",
-      "outflow": "5000000"
-    },
-    {
-      "id": 3,
-      "category": "Ăn Vặt",
-      "date": "2023-10-28",
-      "note": "Nem chua rán",
-      "outflow": "100000"
-    },
-    {
-      "id": 4,
-      "category": "đi du lịch",
-      "date": "2023-10-28",
-      "note": "Tiền đi chơi hôm qua",
-      "outflow": "50000"
-    },
-    {
-      "id": 5,
-      "category": "Ăn uống",
-      "date": "2023-10-25",
-      "note": "Đi ăn tối",
-      "outflow": "2000000"
-    },
-    {
       "id": 6,
-      "category": "Ăn uống",
+      "category": "Đi du lịch",
+      "date": "2023-10-30",
+      "note": "đi Đà Lạt",
+      "outflow": -5000000
+    },
+    {
+      "id": 7,
+      "category": "Ăn Uống",
+      "date": "2023-10-27",
+      "note": "đi ăn trưa",
+      "outflow": -15000
+    },
+    {
+      "id": 8,
+      "category": "Ăn Uống",
       "date": "2023-10-21",
-      "note": "Tiệc liên hoan",
-      "outflow": "600000"
+      "note": "Ăn bánh mỳ",
+      "outflow": -15000
+    },
+    {
+      "id": 16,
+      "category": "Cà Phê",
+      "date": "2023-10-23",
+      "note": "ưerwer",
+      "outflow": -15000
+    },
+    {
+      "id": 17,
+      "category": "Cà Phê",
+      "date": "2023-10-14",
+      "note": "ưerwer",
+      "outflow": -25000
+    },
+    {
+      "id": 18,
+      "category": "Ăn Uống",
+      "date": "2023-10-19",
+      "note": "Cơm Tấm Sườn",
+      "outflow": -30000
+    },
+    {
+      "id": 19,
+      "category": "Cà Phê",
+      "date": "2023-10-21",
+      "note": "Trà Chanh",
+      "outflow": -24000
     }
   ]
 }

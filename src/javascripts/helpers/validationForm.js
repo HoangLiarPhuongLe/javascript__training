@@ -55,10 +55,6 @@ export const validateTransaction = (data) => {
       requiredMessage: MESSAGE.DATE_REQUIRED,
     },
     {
-      field: 'outflow',
-      requiredMessage: MESSAGE.AMOUNT_REQUIRED,
-    },
-    {
       field: 'note',
       requiredMessage: MESSAGE.NOTE_REQUIRED,
     },
