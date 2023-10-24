@@ -1,4 +1,5 @@
 {
+  "source": "src/index.html",
   "scripts": {
     "start": "parcel ./src/*.html --no-cache --no-source-maps --dist-dir dist",
     "build": "rm -rf dist && parcel build ./src/*.html --no-cache --no-source-maps --dist-dir dist"
