@@ -1,4 +1,4 @@
-class LocalStorageService {
+class LocalStorageHelper {
     constructor(){}
 
     saveLocalStorage = (key, value) => {
@@ -20,4 +20,4 @@ class LocalStorageService {
 
 }
 
-export const localStorageService = new LocalStorageService();
+export const localStorageHelper = new LocalStorageHelper();

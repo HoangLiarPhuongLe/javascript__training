@@ -1,13 +1,13 @@
-import { formatDate, formatNumber } from "../helpers/helpers"
+import { formatDate, formatNumber } from "../helpers/format"
 
-class Template {
+class TemplateTransaction {
     /**
-     * Constructor of Template object
+     * Constructor of TemplateTransaction object
      */
     constructor(){ }
 
      /**
-     * HTML Template for render an Transaction object
+     * HTML TemplateTransaction for render an Transaction object
      * @param {object} transaction 
      */
 
@@ -19,13 +19,13 @@ class Template {
       const amountClass = isIncome ? 'income' : 'outflow';
    
       return `
-        <div class="transaction-detail">
+        <li class="transaction-detail">
           <div class="transaction-info">
             <div class="datetime">
               <p class="date-text">${new Date(transaction.date).getDate()}</p>
               <div>
                 <div class="daymonthyear">
-                  <p class="daymonthyear-text">${transactionDate[2]},</p>
+                  <p class="daymonthyear-text">${transactionDate[2]}</p>
                   <p class="daymonthyear-text">${ transactionDate[0]}</p>
                   <p class= "daymonthyear-text">${transactionDate[1]}</p>
                 </div>
@@ -33,22 +33,22 @@ class Template {
                </div>
             </div>
             <p class="amount-${amountClass}">${amountSign}$ ${formatNumber(
-              Math.abs(transaction.outflow),
+              Math.abs(transaction.outflow)
             )}</p>
           </div>
-        </div>
+        </li>
         `;
     }
 
     static displayCategory = (category, transactions, totalOutFlow) => { 
       const isIncome = totalOutFlow >= 0;
       const totalOutFlowSign = isIncome ? '+' : '-';
+      const transaction = transactions.map(transaction => TemplateTransaction.displayTransaction(transaction));
 
       return `
         <li>
           <div class="transaction-category">
             <div class="category-header">
-              <img src="assets/images/dollaricon.svg"/>
               <div>
                 <p class="category-text">${category}</p>
                 <p class="quantity-transactions">${transactions.length} Transactions</p>
@@ -57,28 +57,12 @@ class Template {
             <p class="total-amount-text">${totalOutFlowSign}$ ${formatNumber(Math.abs(totalOutFlow))}</p>
           </div>
           <ul class="transaction-list">
-            ${transactions.map(transaction => Template.displayTransaction(transaction))}
+            ${transaction.join("")}
           </ul>
         </li>
         <div class="gap"></div>
         `;
     }
-
-    static displayBalance = (inflow, outflow) => {
-      return `
-        <div class="inflow">
-          <p class="flow-text">Inflow</p>
-          <span class="amount-income">+ ${formatNumber(inflow)}</span>
-        </div>
-        <div class="outflow">
-          <p class="flow-text">Outflow</p>
-          <span class="amount-outflow">${formatNumber(outflow)}</span>
-        </div>
-        <div class="balance">
-          <span class="amount">${formatNumber(inflow + outflow)}</span>
-        </div>
-        `;
-   }
 }
 
-export default Template;
+export default TemplateTransaction;

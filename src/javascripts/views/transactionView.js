@@ -33,7 +33,6 @@ class TransactionView{
             e.preventDefault();
 
             const transaction = {
-                id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
                 date: this.transactionBodyElement.date.value,
                 outflow: parseInt(this.transactionBodyElement.outflow.value),
@@ -42,14 +41,16 @@ class TransactionView{
 
             const errors = validateTransaction(transaction);
             const errorElements = document.querySelectorAll(".error");
+            console.log("errors length",errors.length);
             
             if(errors.length > 0){
                 this.showErrorMessage(errors)
+                console.log("errors", errors);
             } else{
-                this.clearErrorMessage(errorElements);
                 await addTransaction(transaction);
-                this.closePopup();
                 this.resetPopup();
+                this.clearErrorMessage(errorElements);
+                this.closePopup();
             }
         })
     }
@@ -58,7 +59,6 @@ class TransactionView{
         const errorElements = {
             date: document.querySelector(".error-date"),
             category: document.querySelector(".error-category"),
-            outflow: document.querySelector(".error-amount"),
             note: document.querySelector(".error-note")
         }
 

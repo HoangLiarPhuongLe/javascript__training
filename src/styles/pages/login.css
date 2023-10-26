@@ -81,4 +81,5 @@
 
 .error-message {
   color: var(--red-light-color);
+  visibility: visible;
 }
