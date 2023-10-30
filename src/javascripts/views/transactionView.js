@@ -41,11 +41,9 @@ class TransactionView{
 
             const errors = validateTransaction(transaction);
             const errorElements = document.querySelectorAll(".error");
-            console.log("errors length",errors.length);
             
             if(errors.length > 0){
                 this.showErrorMessage(errors)
-                console.log("errors", errors);
             } else{
                 await addTransaction(transaction);
                 this.resetPopup();
