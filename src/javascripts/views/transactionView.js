@@ -9,9 +9,17 @@ class TransactionView{
     }
 
     //----- RENDERING -----//
-    renderPopup(){
+    renderPopup(transactionId, transaction){
         this.transactionElement.classList.add("transaction-active");
         this.overlayElement.classList.add("overlay-active");
+
+        if(transactionId){
+            this.transactionBodyElement.setAttribute("data-id", transactionId);
+            this.transactionBodyElement.querySelector('input[name = "date"]').value = transaction.date;
+            this.transactionBodyElement.querySelector('input[name = "category"]').value = transaction.category;
+            this.transactionBodyElement.querySelector('input[name = "outflow"]').value = transaction.outflow;
+            this.transactionBodyElement.querySelector('input[name = "note"]').value = transaction.note;
+        }
     }
 
     closePopup(){
@@ -33,6 +41,7 @@ class TransactionView{
             e.preventDefault();
 
             const transaction = {
+                id: this.transactionElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
                 date: this.transactionBodyElement.date.value,
                 outflow: parseInt(this.transactionBodyElement.outflow.value),

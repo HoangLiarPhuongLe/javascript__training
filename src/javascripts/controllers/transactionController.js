@@ -17,10 +17,11 @@ class TransactionController {
      */
     async initTransactions() {
         await this.service.transactionService.initTransactionList();
+        this.loadListTransactions();
         this.view.homeView.addEventRenderPopup(this.addTransaction);
         this.view.homeView.addEventRenderSummary(this.addSummaryTab);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
-        this.loadListTransactions();
+        this.view.homeView.addEventEditTransaction(this.updateTransaction);
     }
 
     loadListTransactions = async() => {
@@ -45,6 +46,17 @@ class TransactionController {
     addTransaction = () => {
         this.view.transactionView.renderPopup();
     }
+
+    updateTransaction = async (transactionId) => {
+        const transaction = await this.service.transactionService.getTransactionById(transactionId);
+        this.view.transactionView.renderPopup(transactionId, transaction);
+    }
+
+    getTransactionById = (id) => {
+        this.service.transactionService.getContactById(id);
+    }
+
+
 
     addSummaryTab = () => {
         const transactions = this.service.transactionService.getTransactions();

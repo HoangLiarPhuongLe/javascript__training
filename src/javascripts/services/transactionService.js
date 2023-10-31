@@ -33,10 +33,21 @@ class TransactionService {
         return this.transactionList;
     }
 
+    getTransactionById = async(id) => {
+        const data = await this.api.getTransactionById(id);
+        const transaction = new Transaction(data);
+        return transaction;
+    }
+
     addTransaction = async(data) => {
         const transaction = new Transaction(data);
         await this.api.addTransaction(transaction);
         this.transactionList.push(transaction);
+    }
+
+    updateTransaction = async(data) => {
+        const transaction = new Transaction(data);
+        await this.api.updateTransaction(transaction);
     }
 }
 
