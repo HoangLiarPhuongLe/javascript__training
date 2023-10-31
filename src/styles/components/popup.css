@@ -148,16 +148,3 @@
   font-weight: 500;
   border: none;
 }
-.error-messages {
-  display: flex;
-  flex-direction: row;
-  gap: 165px;
-}
-
-.error-note {
-  margin-top: 10px;
-}
-
-.error {
-  visibility: hidden;
-}

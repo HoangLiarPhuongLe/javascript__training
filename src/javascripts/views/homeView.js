@@ -1,5 +1,5 @@
-import TemplateTransaction from "../templates/templateTransaction";
-import TemplateSummary from "../templates/templateSummary";
+import TransactionTemplate from "../templates/transactionTemplate";
+import SummaryTemplate from "../templates/summaryTemplate";
 
 class HomeView {
     constructor() {
@@ -52,7 +52,8 @@ class HomeView {
     }
 
     renderCategory(category, transactions, totalOutFlow) {
-       const categoryTemplate = TemplateTransaction.displayCategory(category, transactions, totalOutFlow);
+       const categoryTemplate = TransactionTemplate.displayCategory(category, transactions, totalOutFlow);
+
        this.categoryListEl.innerHTML += categoryTemplate;
     }
 
@@ -69,7 +70,8 @@ class HomeView {
     }
 
     renderSummaryTab(inflow, outflow){
-        const summaryTemplate = TemplateSummary.displayBalance(inflow, outflow);
+        const summaryTemplate = SummaryTemplate.displayBalance(inflow, outflow);
+        
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 

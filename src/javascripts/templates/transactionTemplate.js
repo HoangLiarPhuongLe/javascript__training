@@ -1,6 +1,6 @@
 import { formatDate, formatNumber } from "../helpers/format"
 
-class TemplateTransaction {
+class TransactionTemplate {
     /**
      * Constructor of TemplateTransaction object
      */
@@ -43,7 +43,7 @@ class TemplateTransaction {
     static displayCategory = (category, transactions, totalOutFlow) => { 
       const isIncome = totalOutFlow >= 0;
       const totalOutFlowSign = isIncome ? '+' : '-';
-      const transaction = transactions.map(transaction => TemplateTransaction.displayTransaction(transaction));
+      const transaction = transactions.map(transaction => TransactionTemplate.displayTransaction(transaction));
 
       return `
         <li>
@@ -65,4 +65,4 @@ class TemplateTransaction {
     }
 }
 
-export default TemplateTransaction;
+export default TransactionTemplate;

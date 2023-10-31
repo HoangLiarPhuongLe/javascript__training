@@ -1,6 +1,6 @@
 import { formatNumber } from "../helpers/format"
 
-class TemplateSummary {
+class SummaryTemplate {
      /**
      * Constructor of TemplateSummary object
      */
@@ -28,4 +28,4 @@ class TemplateSummary {
     }
 }
 
-export default TemplateSummary;
+export default SummaryTemplate;
