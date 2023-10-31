@@ -52,7 +52,7 @@ class HomeView {
     }
 
     renderCategory(category, transactions, totalOutFlow) {
-       const categoryTemplate = TransactionTemplate.displayCategory(category, transactions, totalOutFlow);
+       const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
 
        this.categoryListEl.innerHTML += categoryTemplate;
     }
@@ -70,8 +70,8 @@ class HomeView {
     }
 
     renderSummaryTab(inflow, outflow){
-        const summaryTemplate = SummaryTemplate.displayBalance(inflow, outflow);
-        
+        const summaryTemplate = SummaryTemplate.createBalance(inflow, outflow);
+
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 

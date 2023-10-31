@@ -10,7 +10,7 @@ class TransactionTemplate {
      * HTML TemplateTransaction for render an Transaction object
      * @param {object} transaction 
      */
-    static displayTransaction = (transaction) => {
+    static createTransaction = (transaction) => {
       const transactionDateTransform = formatDate(transaction.date);
       const transactionDate = transactionDateTransform.split(" ");
       const isIncome = transaction.outflow >= 0;
@@ -39,10 +39,10 @@ class TransactionTemplate {
         `;
     }
 
-    static displayCategory = (category, transactions, totalOutFlow) => { 
+    static createCategory = (category, transactions, totalOutFlow) => { 
       const isIncome = totalOutFlow >= 0;
       const totalOutFlowSign = isIncome ? '+' : '-';
-      const transaction = transactions.map(transaction => TransactionTemplate.displayTransaction(transaction));
+      const transactionList = transactions.map(transaction => TransactionTemplate.createTransaction(transaction));
 
       return `
         <li>
@@ -56,7 +56,7 @@ class TransactionTemplate {
             <p class="total-amount-text">${totalOutFlowSign}$ ${formatNumber(Math.abs(totalOutFlow))}</p>
           </div>
           <ul class="transaction-list">
-            ${transaction.join("")}
+            ${transactionList.join("")}
           </ul>
         </li>
         <div class="gap"></div>
