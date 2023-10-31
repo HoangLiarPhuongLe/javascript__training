@@ -10,7 +10,6 @@ class TransactionTemplate {
      * HTML TemplateTransaction for render an Transaction object
      * @param {object} transaction 
      */
-
     static displayTransaction = (transaction) => {
       const transactionDateTransform = formatDate(transaction.date);
       const transactionDate = transactionDateTransform.split(" ");
