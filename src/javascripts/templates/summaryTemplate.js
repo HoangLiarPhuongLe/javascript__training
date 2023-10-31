@@ -10,7 +10,6 @@ class SummaryTemplate {
      * HTML TemplateSummary for render an Summary object
      * @param {object} summary 
      */
-
     static displayBalance = (inflow, outflow) => {
         return `
           <div class="inflow">
