@@ -8,7 +8,7 @@
 
 ## Timeline
 
-- 2023/08/29 - 2023/09/14
+- 2023/08/29 - 2023/10/23
 
 ## Team Size
 
@@ -36,4 +36,38 @@
 
 ## Getting Started
 
-- UPDATING
+- Step 01: Clone repository with HTTPS
+
+```
+https://github.com/HoangLiarPhuongLe/javascript__training.git
+```
+
+- Step 02: Move to folder which just cloned in your computer
+
+```
+cd javascript__training
+```
+
+- Step 03: Change to branch feature/implement-big-practice
+
+```
+git checkout feature/implement-big-practice
+```
+
+- Step 04: Install packages
+
+```
+npm install
+```
+
+- Step 05: Run json-server
+
+```
+json-server --watch src/json-server/db.json
+```
+
+- Step 06: Run
+
+```
+npm start
+```

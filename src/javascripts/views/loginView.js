@@ -1,7 +1,7 @@
 import { DATA } from "../constants/config";
 import { ERROR_MESSAGE } from "../constants/message";
 import { validate } from "../helpers/validationForm";
-import { localStorageService } from "../services/localStorageService";
+import { localStorageHelper } from "../helpers/localStorageHelper";
 
 class LoginView{
     
@@ -60,7 +60,7 @@ class LoginView{
     }
 
     saveEmailToLocalStorage = (email) => {
-        localStorageService.saveLocalStorage(DATA.ACCOUNT, email);
+        localStorageHelper.saveLocalStorage(DATA.ACCOUNT, email);
     }
 }
 

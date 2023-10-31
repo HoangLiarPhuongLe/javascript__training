@@ -1,4 +1,5 @@
-import Template from "../templates/template";
+import TransactionTemplate from "../templates/transactionTemplate";
+import SummaryTemplate from "../templates/summaryTemplate";
 
 class HomeView {
     constructor() {
@@ -51,7 +52,8 @@ class HomeView {
     }
 
     renderCategory(category, transactions, totalOutFlow) {
-       const categoryTemplate = Template.displayCategory(category, transactions, totalOutFlow);
+       const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
+
        this.categoryListEl.innerHTML += categoryTemplate;
     }
 
@@ -68,7 +70,8 @@ class HomeView {
     }
 
     renderSummaryTab(inflow, outflow){
-        const summaryTemplate = Template.displayBalance(inflow, outflow);
+        const summaryTemplate = SummaryTemplate.createBalance(inflow, outflow);
+
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 

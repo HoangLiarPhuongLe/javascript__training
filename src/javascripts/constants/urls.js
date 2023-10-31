@@ -1,4 +1,4 @@
 /**
  * API gateway url
  */
-export const API_BASE_URL = "https://json-server-z5cr.onrender.com";
+export const API_BASE_URL = " http://localhost:3000";

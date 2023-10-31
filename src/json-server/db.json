@@ -16,60 +16,95 @@
       "id": 1
     },
     {
-      "id": 6,
-      "category": "Đi du lịch",
-      "date": "2023-10-30",
-      "note": "đi Đà Lạt",
-      "outflow": -5000000
-    },
-    {
-      "id": 7,
-      "category": "Ăn Uống",
-      "date": "2023-10-27",
-      "note": "đi ăn trưa",
-      "outflow": -15000
-    },
-    {
-      "id": 8,
-      "category": "Ăn Uống",
-      "date": "2023-10-21",
-      "note": "Ăn bánh mỳ",
-      "outflow": -15000
-    },
-    {
-      "id": 16,
       "category": "Cà Phê",
       "date": "2023-10-23",
-      "note": "ưerwer",
-      "outflow": -15000
+      "note": "Cà Phê cô Hà",
+      "outflow": -15000,
+      "id": 23
     },
     {
-      "id": 17,
+      "category": "Ăn Uống",
+      "date": "2023-10-28",
+      "note": "Mỳ Quảng",
+      "outflow": -20000,
+      "id": 24
+    },
+    {
+      "category": "Ăn Uống",
+      "date": "2023-10-25",
+      "note": "Bún Mắm",
+      "outflow": -20000,
+      "id": 25
+    },
+    {
+      "category": "Cà Phê",
+      "date": "2023-10-07",
+      "note": "Cà Phê muối",
+      "outflow": -15000,
+      "id": 26
+    },
+    {
+      "category": "Ăn Uống",
+      "date": "2023-10-07",
+      "note": "Bún bò",
+      "outflow": -15000,
+      "id": 27
+    },
+    {
+      "category": "Cà Phê",
+      "date": "2023-10-07",
+      "note": "Cà Phê Dừa",
+      "outflow": -15000,
+      "id": 28
+    },
+    {
+      "category": "Ăn Uống",
+      "date": "2023-10-07",
+      "note": "Hủ Tiếu",
+      "outflow": -20000,
+      "id": 29
+    },
+    {
       "category": "Cà Phê",
       "date": "2023-10-14",
-      "note": "ưerwer",
-      "outflow": -25000
+      "note": "Bạc Xỉu",
+      "outflow": -20000,
+      "id": 30
     },
     {
-      "id": 18,
-      "category": "Ăn Uống",
-      "date": "2023-10-19",
-      "note": "Cơm Tấm Sườn",
-      "outflow": -30000
-    },
-    {
-      "id": 19,
       "category": "Cà Phê",
-      "date": "2023-10-21",
-      "note": "Trà Chanh",
-      "outflow": -24000
+      "date": "2023-10-07",
+      "note": "Đen đá",
+      "outflow": -12000,
+      "id": 31
     },
     {
-      "id": 20,
+      "category": "Cà Phê",
+      "date": "2023-10-14",
+      "note": "Cà Phê Sữa",
+      "outflow": -15000,
+      "id": 32
+    },
+    {
       "category": "Ăn Uống",
       "date": "2023-10-21",
-      "note": "mỳ quảng",
-      "outflow": -15000
+      "note": "Bún chả",
+      "outflow": -35000,
+      "id": 33
+    },
+    {
+      "category": "Cà Phê",
+      "date": "2023-10-07",
+      "note": "Cà phê Sữa",
+      "outflow": -10000,
+      "id": 34
+    },
+    {
+      "category": "Ăn Uống",
+      "date": "2023-10-14",
+      "note": "Bún tái chả",
+      "outflow": -20000,
+      "id": 35
     }
   ]
 }

@@ -26,13 +26,11 @@
       </div>
       <!-- Start Summary Tab -->
       <section class="summary">
-       
       </section>
       <!-- End Summary Tab -->
 
      <!-- Start Transaction list -->
       <ul class="category-list">
-
       </ul>
     </section>
     <!-- End Transaction list -->
@@ -48,14 +46,11 @@
         </div>
         <form class="transaction-body">
           <div class="transaction-input-fields">
-            <div>
               <div class="input-field">
                 <label class="title">Date</label>
                 <input type="date" class="input-date" name="date"/>
               </div>
-              <p class="error error-date"></p>
-            </div>
-            <div>
+             
               <div class="input-field">
                 <label class="title">Category</label>
                 <div class="category-form">
@@ -63,15 +58,14 @@
                   <input type="text" name="category" class="input-category" placeholder="Select category" />
                 </div>
               </div>
-              <p class="error error-category"></p>
-            </div>
-            <div>
               <div class="input-field">
                 <label class="title">Amount</label>
                 <input type="number" name="outflow" class="input-amount" value="0"/>
               </div>
-            <p class="error error-amount"></p>
-            </div>
+          </div>
+          <div class="error-messages">
+            <p class="error error-date">Date is required</p>
+            <p class="error error-category"></p>
           </div>
           <div>
             <div class="transaction-note">
