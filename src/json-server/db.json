@@ -9,18 +9,18 @@
   "wallet": [],
   "transaction": [
     {
+      "id": 1,
       "category": "Cà Phê",
-      "date": "2023-10-21",
-      "note": "tiền cà phê thứ 2",
-      "outflow": -30000,
-      "id": 1
+      "date": "2023-11-03",
+      "note": "tiền cà phê thứ 6",
+      "outflow": -15000
     },
     {
+      "id": 23,
       "category": "Cà Phê",
       "date": "2023-10-23",
-      "note": "Cà Phê cô Hà",
-      "outflow": -15000,
-      "id": 23
+      "note": "Cà Phê cô Minh",
+      "outflow": -15000
     },
     {
       "category": "Ăn Uống",
@@ -105,6 +105,41 @@
       "note": "Bún tái chả",
       "outflow": -20000,
       "id": 35
+    },
+    {
+      "id": 36,
+      "category": "Cà Phê",
+      "date": "2023-11-02",
+      "note": "Cà Phê Sáng",
+      "outflow": -15000
+    },
+    {
+      "id": 37,
+      "category": "Cà Phê",
+      "date": "2023-11-11",
+      "note": "Bạc Xỉu Muối",
+      "outflow": -20000
+    },
+    {
+      "id": 38,
+      "category": "Cà Phê",
+      "date": "2023-11-11",
+      "note": "Cà Phê Đen",
+      "outflow": -12000
+    },
+    {
+      "id": 39,
+      "category": "Ăn Uống",
+      "date": "2023-11-11",
+      "note": "Mỳ Quảng Trứng",
+      "outflow": -20000
+    },
+    {
+      "id": 40,
+      "category": "Cà Phê",
+      "date": "2023-11-06",
+      "note": "Campuchino",
+      "outflow": -20000
     }
   ]
 }

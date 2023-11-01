@@ -14,5 +14,6 @@ export const ERROR_MESSAGE = {
 }
 
 export const ADD_TRANSACTION_MESSAGE = {
-    ADD_TRANSACTION_SUCCESS: "Add Transaction Succcess !"
+    ADD_TRANSACTION_SUCCESS: "Add Transaction Succcess !",
+    UPDATE_TRANSACTION_SUCCESS: "Update Transaction Success !"
 }
