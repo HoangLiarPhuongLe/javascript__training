@@ -18,12 +18,10 @@ class TransactionController {
     async initTransactions() {
         await this.service.transactionService.initTransactionList();
         this.loadListTransactions();
-        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
         this.view.homeView.addEventRenderPopup(this.addTransaction);
-        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
-        
-     
+        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
+        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
     }
 
     loadListTransactions = async() => {
@@ -40,7 +38,8 @@ class TransactionController {
             this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.UPDATE_TRANSACTION_SUCCESS);
         }
        
-        this.loadListTransactions();
+       this.loadListTransactions();
+       this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
     }
 
     //----- POPUP CONTROLLER -----//

@@ -47,6 +47,12 @@ class TransactionService {
     updateTransaction = async(data) => {
         const transaction = new Transaction(data);
         await this.api.updateTransaction(transaction);
+        this.transactionList = this.transactionList.map((item) => {
+            if (item.id == transaction.id) {
+              return transaction;
+            }
+            return item;
+        })
     }
 }
 

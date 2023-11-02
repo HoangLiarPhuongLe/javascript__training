@@ -11,8 +11,8 @@
     {
       "id": 1,
       "category": "Cà Phê",
-      "date": "2023-11-03",
-      "note": "tiền cà phê thứ 6",
+      "date": "2023-11-04",
+      "note": "tiền cà phê thứ 7",
       "outflow": -15000
     },
     {
@@ -37,11 +37,11 @@
       "id": 25
     },
     {
+      "id": 26,
       "category": "Cà Phê",
       "date": "2023-10-07",
       "note": "Cà Phê muối",
-      "outflow": -15000,
-      "id": 26
+      "outflow": -15000
     },
     {
       "category": "Ăn Uống",
@@ -79,67 +79,25 @@
       "id": 31
     },
     {
+      "id": 32,
       "category": "Cà Phê",
-      "date": "2023-10-14",
-      "note": "Cà Phê Sữa",
-      "outflow": -15000,
-      "id": 32
-    },
-    {
-      "category": "Ăn Uống",
-      "date": "2023-10-21",
-      "note": "Bún chả",
-      "outflow": -35000,
-      "id": 33
-    },
-    {
-      "category": "Cà Phê",
-      "date": "2023-10-07",
-      "note": "Cà phê Sữa",
-      "outflow": -10000,
-      "id": 34
-    },
-    {
-      "category": "Ăn Uống",
-      "date": "2023-10-14",
-      "note": "Bún tái chả",
-      "outflow": -20000,
-      "id": 35
-    },
-    {
-      "id": 36,
-      "category": "Cà Phê",
-      "date": "2023-11-02",
-      "note": "Cà Phê Sáng",
+      "date": "2023-11-04",
+      "note": "tiền cà phê sáng thứ 7",
       "outflow": -15000
     },
     {
-      "id": 37,
+      "id": 33,
       "category": "Cà Phê",
-      "date": "2023-11-11",
-      "note": "Bạc Xỉu Muối",
+      "date": "2023-11-04",
+      "note": "ưewer",
       "outflow": -20000
     },
     {
-      "id": 38,
+      "id": 34,
       "category": "Cà Phê",
-      "date": "2023-11-11",
-      "note": "Cà Phê Đen",
-      "outflow": -12000
-    },
-    {
-      "id": 39,
-      "category": "Ăn Uống",
-      "date": "2023-11-11",
-      "note": "Mỳ Quảng Trứng",
-      "outflow": -20000
-    },
-    {
-      "id": 40,
-      "category": "Cà Phê",
-      "date": "2023-11-06",
-      "note": "Campuchino",
-      "outflow": -20000
+      "date": "2023-11-03",
+      "note": "Bạc Xỉu Nóng",
+      "outflow": -15000
     }
   ]
 }
