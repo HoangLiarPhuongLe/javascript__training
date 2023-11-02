@@ -10,10 +10,10 @@ export const MESSAGE = {
 }
 
 export const ERROR_MESSAGE = {
-    ERROR_CREDENTIALS: "Email or Password not correct. Please try again !"
+    ERROR_CREDENTIALS: "Email or Password not correct. Please try again!"
 }
 
 export const ADD_TRANSACTION_MESSAGE = {
-    ADD_TRANSACTION_SUCCESS: "Add Transaction Succcess !",
-    UPDATE_TRANSACTION_SUCCESS: "Update Transaction Success !"
+    ADD_TRANSACTION_SUCCESS: "Add Transaction Succcess!",
+    UPDATE_TRANSACTION_SUCCESS: "Update Transaction Success!"
 }

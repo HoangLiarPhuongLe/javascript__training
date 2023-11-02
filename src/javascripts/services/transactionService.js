@@ -35,7 +35,6 @@ class TransactionService {
     getTransactionById = async(id) => {
         const data = await this.api.getTransactionById(id);
         const transaction = new Transaction(data);
-        console.log(transaction);
         return transaction;
     }
 

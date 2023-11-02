@@ -55,7 +55,6 @@ class HomeView {
        const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
 
        this.categoryListEl.innerHTML += categoryTemplate;
-        
     }
 
     closeTransactionsList() {
@@ -78,14 +77,14 @@ class HomeView {
 
     
     //----- EVENT HANDLER -----//
-    addDelegateShowInfo = (showInfo) => {
+    addDelegateShowInfo = (handlerTransactionInfo) => {
         this.transactionListEl = this.categoryListEl.querySelector(".transaction-list");
         this.transactionListEl.addEventListener("click", (event) => {
             const el = event.target.closest(".transaction-detail");
            
             const transactionId = el.getAttribute("data-id");
            
-            showInfo(transactionId);
+            handlerTransactionInfo(transactionId);
         })
     }
 

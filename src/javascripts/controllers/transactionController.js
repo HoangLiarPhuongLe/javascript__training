@@ -18,7 +18,7 @@ class TransactionController {
     async initTransactions() {
         await this.service.transactionService.initTransactionList();
         this.loadListTransactions();
-        this.view.homeView.addDelegateShowInfo(this.showInfo);
+        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
         this.view.homeView.addEventRenderPopup(this.addTransaction);
         this.view.homeView.addEventRenderSummary(this.addSummaryTab);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
@@ -32,10 +32,10 @@ class TransactionController {
     }
 
     saveTransaction = async(data) => {
-        if(!data.id){
+        if(!data.id) {
             await this.service.transactionService.addTransaction(data);
             this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCESS);
-        }else{
+        } else {
             await this.service.transactionService.updateTransaction(data);
             this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.UPDATE_TRANSACTION_SUCCESS);
         }
@@ -55,7 +55,7 @@ class TransactionController {
         this.view.transactionView.renderPopup();
     }
 
-    showInfo = async (transactionId) => {
+    handlerTransactionInfo = async (transactionId) => {
         const transaction = await this.service.transactionService.getTransactionById(transactionId);
         this.view.transactionView.renderPopup(transactionId, transaction);
     }
