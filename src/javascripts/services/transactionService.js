@@ -54,6 +54,11 @@ class TransactionService {
             return item;
         })
     }
+
+    deleteTransaction = async(id) => {
+        await this.api.deleteTransactionById(id);
+        this.transactionList = this.transactionList.filter((item) => item.id != id);
+    }
 }
 
 export default TransactionService;

@@ -6,6 +6,7 @@ class TransactionView{
         this.transactionBodyElement = document.querySelector(".transaction-body");
         this.overlayElement = document.querySelector(".overlay");
         this.buttonSaveElement = document.querySelector(".btn-save");
+        this.buttonDeleteElement = document.querySelector(".btn-delete");
     }
 
     //----- RENDERING -----//
@@ -25,11 +26,14 @@ class TransactionView{
     closePopup(){
         this.transactionElement.classList.remove("transaction-active");
         this.overlayElement.classList.remove("overlay-active");
+        this.transactionBodyElement.removeAttribute("data-id");
+        this.transactionBodyElement.reset();
     }
 
     resetPopup(){
+        
         const inputs = this.transactionBodyElement.querySelectorAll('input');
-
+        
         inputs.forEach((input) => {
             input.value = " ";
         })
@@ -40,6 +44,7 @@ class TransactionView{
         this.buttonSaveElement?.addEventListener("click", async(e) => {
             e.preventDefault();
 
+            
             const transaction = {
                 id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
@@ -62,6 +67,18 @@ class TransactionView{
         })
     }
 
+    addEventDeleteTransaction = (deleteTransaction) => {
+        this.buttonDeleteElement?.addEventListener("click", async(e) => {
+            e.preventDefault();
+           
+            const transactionId = this.transactionBodyElement.getAttribute("data-id");
+           
+            deleteTransaction(transactionId);
+            this.closePopup();
+            
+        })
+    }
+
     showErrorMessage = (errors) =>{
         const errorElements = {
             date: document.querySelector(".error-date"),
@@ -78,7 +95,6 @@ class TransactionView{
     clearErrorMessage = (errorElements) => {
         errorElements.forEach((errorElement) => {
             errorElement.classList.remove("error-message");
-            errorElement.textContent = "";
         })
     }
 }

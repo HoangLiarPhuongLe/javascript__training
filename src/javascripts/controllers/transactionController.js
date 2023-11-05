@@ -1,4 +1,4 @@
-import { ADD_TRANSACTION_MESSAGE} from "../constants/message";
+import { ADD_TRANSACTION_MESSAGE, DELETE_TRANSACTION_MESSAGE} from "../constants/message";
 
 class TransactionController {
     constructor(service, view){
@@ -42,12 +42,26 @@ class TransactionController {
        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
     }
 
+    deleteTransaction = async(transactionId) => {
+        if(transactionId) {
+            await this.service.transactionService.deleteTransaction(transactionId);
+            this.view.snackbar.showSnackBar('success', DELETE_TRANSACTION_MESSAGE.DELETE_TRANSACTION_SUCCESS);
+            
+        } else {
+            this.view.snackbar.showSnackBar('warning', DELETE_TRANSACTION_MESSAGE.DELETE_TRANSACTION_FAIL);
+        }
+
+        this.loadListTransactions();
+        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
+    }
+
     //----- POPUP CONTROLLER -----//
     /**
      * Initializing the Popup interface and event handlers
      */
     async initPopup() {
         this.view.transactionView.addEventAddTransaction(this.saveTransaction);
+        this.view.transactionView.addEventDeleteTransaction(this.deleteTransaction);
     }
 
     addTransaction = () => {
