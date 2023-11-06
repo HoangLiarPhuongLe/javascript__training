@@ -75,7 +75,7 @@ class ApiService{
       }
     } 
 
-    async deleteTransactionById (id) {
+    async deleteTransactionById(id) {
       await fetch(`${this.baseUrl}${this.path}/${id}`,
       {
         method: "DELETE",
