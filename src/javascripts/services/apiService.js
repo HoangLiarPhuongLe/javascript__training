@@ -75,6 +75,13 @@ class ApiService{
         throw new Error("Failed to add transaction.");
       }
     } 
+
+    async deleteTransactionById(id) {
+      await fetch(`${this.baseUrl}${this.path}/${id}`,
+      {
+        method: "DELETE",
+      })
+    }
 }
 
 export default ApiService;
