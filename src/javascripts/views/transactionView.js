@@ -44,7 +44,6 @@ class TransactionView{
         this.buttonSaveElement?.addEventListener("click", async(e) => {
             e.preventDefault();
 
-            
             const transaction = {
                 id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
@@ -75,7 +74,6 @@ class TransactionView{
            
             deleteTransaction(transactionId);
             this.closePopup();
-            
         })
     }
 
