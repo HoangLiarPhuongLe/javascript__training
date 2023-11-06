@@ -9,13 +9,6 @@
   "wallet": [],
   "transaction": [
     {
-      "id": 2,
-      "category": "Ăn Uống",
-      "date": "2023-11-09",
-      "note": " Bánh Mỳ",
-      "outflow": -15000
-    },
-    {
       "id": 4,
       "category": "Ăn Uống",
       "date": "2023-11-14",
@@ -23,24 +16,10 @@
       "outflow": -15000
     },
     {
-      "id": 9,
-      "category": "Ăn Uống",
-      "date": "2023-11-08",
-      "note": "Bún Bò",
-      "outflow": -15000
-    },
-    {
-      "id": 11,
-      "category": "Ăn Uống",
-      "date": "2023-11-08",
-      "note": "Bánh Mỳ Heo Quay",
-      "outflow": -15000
-    },
-    {
       "id": 12,
       "category": "Ăn Uống",
       "date": "2023-11-10",
-      "note": "Mì Xào",
+      "note": "Bánh Bèo",
       "outflow": -15000
     },
     {
@@ -48,6 +27,27 @@
       "category": "Ăn Uống",
       "date": "2023-11-10",
       "note": "Bún Chả",
+      "outflow": -20000
+    },
+    {
+      "id": 14,
+      "category": "Ăn Uống",
+      "date": "2023-11-11",
+      "note": "Hủ Tiếu",
+      "outflow": -15000
+    },
+    {
+      "id": 15,
+      "category": "Ăn Uống",
+      "date": "2023-11-09",
+      "note": "Bánh Canh",
+      "outflow": -20000
+    },
+    {
+      "id": 16,
+      "category": "Ăn Uống",
+      "date": "2023-11-08",
+      "note": "Bún Mắm",
       "outflow": -20000
     }
   ]

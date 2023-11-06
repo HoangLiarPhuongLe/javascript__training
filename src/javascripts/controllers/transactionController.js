@@ -1,4 +1,4 @@
-import { ADD_TRANSACTION_MESSAGE, DELETE_TRANSACTION_MESSAGE} from "../constants/message";
+import { ADD_TRANSACTION_MESSAGE, DELETE_TRANSACTION_MESSAGE } from "../constants/message";
 
 class TransactionController {
     constructor(service, view){

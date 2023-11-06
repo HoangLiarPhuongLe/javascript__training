@@ -57,7 +57,9 @@ class TransactionService {
 
     deleteTransaction = async(id) => {
         await this.api.deleteTransactionById(id);
-        this.transactionList = this.transactionList.filter((item) => item.id != id);
+        const index = this.transactionList.findIndex((item) => item.id == id);
+
+        this.transactionList.splice(index, 1);
     }
 }
 
