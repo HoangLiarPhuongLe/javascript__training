@@ -9,95 +9,46 @@
   "wallet": [],
   "transaction": [
     {
-      "id": 1,
-      "category": "Cà Phê",
-      "date": "2023-11-04",
-      "note": "tiền cà phê thứ 7",
+      "id": 4,
+      "category": "Ăn Uống",
+      "date": "2023-11-14",
+      "note": " Bánh Cuốn",
       "outflow": -15000
     },
     {
-      "id": 23,
-      "category": "Cà Phê",
-      "date": "2023-10-23",
-      "note": "Cà Phê cô Hà",
+      "id": 12,
+      "category": "Ăn Uống",
+      "date": "2023-11-10",
+      "note": "Bánh Bèo",
       "outflow": -15000
     },
     {
+      "id": 13,
       "category": "Ăn Uống",
-      "date": "2023-10-28",
-      "note": "Mỳ Quảng",
-      "outflow": -20000,
-      "id": 24
-    },
-    {
-      "category": "Ăn Uống",
-      "date": "2023-10-25",
-      "note": "Bún Mắm",
-      "outflow": -20000,
-      "id": 25
-    },
-    {
-      "id": 26,
-      "category": "Cà Phê",
-      "date": "2023-10-07",
-      "note": "Cà Phê muối",
-      "outflow": -15000
-    },
-    {
-      "category": "Ăn Uống",
-      "date": "2023-10-07",
-      "note": "Bún bò",
-      "outflow": -15000,
-      "id": 27
-    },
-    {
-      "category": "Cà Phê",
-      "date": "2023-10-07",
-      "note": "Cà Phê Dừa",
-      "outflow": -15000,
-      "id": 28
-    },
-    {
-      "category": "Ăn Uống",
-      "date": "2023-10-07",
-      "note": "Hủ Tiếu",
-      "outflow": -20000,
-      "id": 29
-    },
-    {
-      "category": "Cà Phê",
-      "date": "2023-10-14",
-      "note": "Bạc Xỉu",
-      "outflow": -20000,
-      "id": 30
-    },
-    {
-      "category": "Cà Phê",
-      "date": "2023-10-07",
-      "note": "Đen đá",
-      "outflow": -12000,
-      "id": 31
-    },
-    {
-      "id": 32,
-      "category": "Cà Phê",
-      "date": "2023-11-04",
-      "note": "tiền cà phê sáng thứ 7",
-      "outflow": -15000
-    },
-    {
-      "id": 33,
-      "category": "Cà Phê",
-      "date": "2023-11-04",
-      "note": "ưewer",
+      "date": "2023-11-10",
+      "note": "Bún Chả",
       "outflow": -20000
     },
     {
-      "id": 34,
-      "category": "Cà Phê",
-      "date": "2023-11-03",
-      "note": "Bạc Xỉu Nóng",
+      "id": 14,
+      "category": "Ăn Uống",
+      "date": "2023-11-11",
+      "note": "Hủ Tiếu",
       "outflow": -15000
+    },
+    {
+      "id": 15,
+      "category": "Ăn Uống",
+      "date": "2023-11-09",
+      "note": "Bánh Canh",
+      "outflow": -20000
+    },
+    {
+      "id": 16,
+      "category": "Ăn Uống",
+      "date": "2023-11-08",
+      "note": "Bún Mắm",
+      "outflow": -20000
     }
   ]
 }
