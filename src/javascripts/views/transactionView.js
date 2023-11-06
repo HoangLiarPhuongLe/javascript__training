@@ -41,7 +41,7 @@ class TransactionView{
             e.preventDefault();
 
             const transaction = {
-                id: this.transactionElement.getAttribute("data-id"),
+                id: this.transactionBodyElement.getAttribute("data-id"),
                 category: this.transactionBodyElement.category.value,
                 date: this.transactionBodyElement.date.value,
                 outflow: parseInt(this.transactionBodyElement.outflow.value),

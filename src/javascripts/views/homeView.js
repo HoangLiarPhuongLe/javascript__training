@@ -8,7 +8,6 @@ class HomeView {
         this.summaryTabEl = document.querySelector(".summary");
         this.showTransactionsTabBtnEl = document.querySelector(".transaction-details-button");
         this.showSummaryTabBtnEl = document.querySelector(".summary-button");
-        this.transactionEl = document.querySelector(".transaction-detail");
     }
 
      //----- RENDERING -----//
@@ -56,7 +55,6 @@ class HomeView {
        const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
 
        this.categoryListEl.innerHTML += categoryTemplate;
-
     }
 
     closeTransactionsList() {
@@ -77,7 +75,18 @@ class HomeView {
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 
+    
     //----- EVENT HANDLER -----//
+    addDelegateShowInfo = (renderTransactionInfo) => {
+        this.transactionListEl = this.categoryListEl.querySelector(".transaction-list");
+        this.transactionListEl.addEventListener("click", (event) => {
+            const transactionDetailEl = event.target.closest(".transaction-detail");
+            const transactionId = transactionDetailEl.getAttribute("data-id");
+           
+            renderTransactionInfo(transactionId);
+        })
+    }
+
     addEventRenderPopup = (handler) => {
         this.addBtnEl.addEventListener("click", () => {
             handler();
@@ -94,13 +103,6 @@ class HomeView {
         this.showTransactionsTabBtnEl.addEventListener("click", () => {
             handler();
         });
-    }
-
-    addEventEditTransaction = (updateTransaction) => {
-        this.transactionEl.addEventListener("click", (event) => {
-            const transactionId = event.target.parentNode.getAttribute("data-id");
-            updateTransaction(transactionId);
-        })
     }
 }
 

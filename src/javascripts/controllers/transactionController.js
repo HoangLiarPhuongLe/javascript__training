@@ -19,9 +19,9 @@ class TransactionController {
         await this.service.transactionService.initTransactionList();
         this.loadListTransactions();
         this.view.homeView.addEventRenderPopup(this.addTransaction);
-        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
-        this.view.homeView.addEventEditTransaction(this.updateTransaction);
+        this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
+        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
     }
 
     loadListTransactions = async() => {
@@ -30,9 +30,16 @@ class TransactionController {
     }
 
     saveTransaction = async(data) => {
-        await this.service.transactionService.addTransaction(data);
-        this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCESS);
-        this.loadListTransactions();
+        if(!data.id) {
+            await this.service.transactionService.addTransaction(data);
+            this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCESS);
+        } else {
+            await this.service.transactionService.updateTransaction(data);
+            this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.UPDATE_TRANSACTION_SUCCESS);
+        }
+       
+       this.loadListTransactions();
+       this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
     }
 
     //----- POPUP CONTROLLER -----//
@@ -47,7 +54,7 @@ class TransactionController {
         this.view.transactionView.renderPopup();
     }
 
-    updateTransaction = async (transactionId) => {
+    renderTransactionInfo = async (transactionId) => {
         const transaction = await this.service.transactionService.getTransactionById(transactionId);
         this.view.transactionView.renderPopup(transactionId, transaction);
     }

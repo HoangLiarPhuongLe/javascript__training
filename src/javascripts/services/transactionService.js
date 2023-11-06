@@ -6,7 +6,6 @@ class TransactionService {
     constructor(){
         this.api = new ApiService(API_BASE_URL, '/transaction');
         this.transactionList;
-        this.initTransactionList();
     }
 
     /**
@@ -47,7 +46,14 @@ class TransactionService {
 
     updateTransaction = async(data) => {
         const transaction = new Transaction(data);
+        
         await this.api.updateTransaction(transaction);
+        this.transactionList = this.transactionList.map((item) => {
+            if (item.id.toString() === transaction.id) {
+              return transaction;
+            }
+            return item;
+        })
     }
 }
 
