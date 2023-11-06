@@ -75,7 +75,18 @@ class HomeView {
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 
+    
     //----- EVENT HANDLER -----//
+    addDelegateShowInfo = (renderTransactionInfo) => {
+        this.transactionListEl = this.categoryListEl.querySelector(".transaction-list");
+        this.transactionListEl.addEventListener("click", (event) => {
+            const transactionDetailEl = event.target.closest(".transaction-detail");
+            const transactionId = transactionDetailEl.getAttribute("data-id");
+           
+            renderTransactionInfo(transactionId);
+        })
+    }
+
     addEventRenderPopup = (handler) => {
         this.addBtnEl.addEventListener("click", () => {
             handler();

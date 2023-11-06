@@ -18,7 +18,7 @@ class TransactionTemplate {
       const amountClass = isIncome ? 'income' : 'outflow';
    
       return `
-        <li class="transaction-detail">
+        <li class="transaction-detail" data-id="${transaction.id}">
           <div class="transaction-info">
             <div class="datetime">
               <p class="date-text">${new Date(transaction.date).getDate()}</p>

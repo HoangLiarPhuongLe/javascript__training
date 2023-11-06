@@ -16,6 +16,7 @@ class SnackBarView {
 
         await wait(3000);
         this.snackbarElement.classList.remove("snackbar-show");
+        this.snackbarElement.classList.remove(`snackbar-${type}`);
     }
 }
 
