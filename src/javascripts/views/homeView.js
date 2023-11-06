@@ -77,14 +77,13 @@ class HomeView {
 
     
     //----- EVENT HANDLER -----//
-    addDelegateShowInfo = (handlerTransactionInfo) => {
+    addDelegateShowInfo = (renderTransactionInfo) => {
         this.transactionListEl = this.categoryListEl.querySelector(".transaction-list");
         this.transactionListEl.addEventListener("click", (event) => {
-            const el = event.target.closest(".transaction-detail");
+            const transactionDetailEl = event.target.closest(".transaction-detail");
+            const transactionId = transactionDetailEl.getAttribute("data-id");
            
-            const transactionId = el.getAttribute("data-id");
-           
-            handlerTransactionInfo(transactionId);
+            renderTransactionInfo(transactionId);
         })
     }
 

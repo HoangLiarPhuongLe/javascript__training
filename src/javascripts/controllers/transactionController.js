@@ -20,7 +20,7 @@ class TransactionController {
         this.loadListTransactions();
         this.view.homeView.addEventRenderPopup(this.addTransaction);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
-        this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
+        this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
         this.view.homeView.addEventRenderSummary(this.addSummaryTab);
     }
 
@@ -39,7 +39,7 @@ class TransactionController {
         }
        
        this.loadListTransactions();
-       this.view.homeView.addDelegateShowInfo(this.handlerTransactionInfo);
+       this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
     }
 
     //----- POPUP CONTROLLER -----//
@@ -54,7 +54,7 @@ class TransactionController {
         this.view.transactionView.renderPopup();
     }
 
-    handlerTransactionInfo = async (transactionId) => {
+    renderTransactionInfo = async (transactionId) => {
         const transaction = await this.service.transactionService.getTransactionById(transactionId);
         this.view.transactionView.renderPopup(transactionId, transaction);
     }

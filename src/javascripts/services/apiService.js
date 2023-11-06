@@ -56,7 +56,8 @@ class ApiService{
     
       try {
         // Make a POST request to the API endpoint with the transaction object as the request body
-        const response = await fetch(`${this.baseUrl}${this.path}/${transaction.id}`, {
+        const response = await fetch(`${this.baseUrl}${this.path}/${transaction.id}`, 
+        {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
