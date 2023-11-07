@@ -1,94 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css" />
-    <title>Home page</title>
-</head>
-<body>
-    <header class="main-header">
-      <div class="header-left">
-        <img class="wallet-icon" src="assets/images/wallet.png" alt="wallet icon" />
-        <div>
-          <p class="wallet-name">Nezumi</p>
-          <p class="wallet-amount">+$ 499,900,000.00</p>
-        </div>
-      </div>
-      <button class="btn-add-transaction">add transaction</button>
-    </header>
-
-    <section class="transaction-list-container">
-      <div class="transaction-title">
-        <button class="summary-button">Summary</button>
-        <button class="transaction-details-button">transaction details</button>
-      </div>
-      <!-- Start Summary Tab -->
-      <section class="summary">
-      </section>
-      <!-- End Summary Tab -->
-
-     <!-- Start Transaction list -->
-      <ul class="category-list">
-      </ul>
-    </section>
-    <!-- End Transaction list -->
-
-    <!-- Start overlay -->
-    <div class="overlay"></div>
-    <!-- End overlay -->
-
-    <!-- Add, delete transaction form -->
-    <div class="transaction">
-        <div class="transaction-header">
-            <p>Add transaction</p>
-        </div>
-        <form class="transaction-body">
-          <div class="transaction-input-fields">
-              <div class="input-field">
-                <label class="title">Date</label>
-                <input type="date" class="input-date" name="date"/>
-              </div>
-             
-              <div class="input-field">
-                <label class="title">Category</label>
-                <div class="category-form">
-                  <img src="assets/images/icon_not_selected.svg" alt="Question Icon" >
-                  <input type="text" name="category" class="input-category" placeholder="Select category" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <title>Home page</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="header-left">
+                <img class="wallet-icon" src="assets/images/wallet.png" alt="wallet icon" />
+                <div>
+                    <p class="wallet-name">Nezumi</p>
+                    <p class="wallet-amount">+$ 499,900,000.00</p>
                 </div>
-              </div>
-              <div class="input-field">
-                <label class="title">Amount</label>
-                <input type="number" name="outflow" class="input-amount" value="0"/>
-              </div>
-          </div>
-          <div class="error-messages">
-            <p class="error error-date">Date is required</p>
-            <p class="error error-category"></p>
-          </div>
-          <div>
-            <div class="transaction-note">
-              <label class="title">Note</label>
-              <input type="text" name="note" class="input-note" placeholder="Note" />
+                <button class="btn-add-budget">add budget</button>
             </div>
-            <p class="error error-note"></p>
-          </div>
-          <div class="action-form">
-            <button class="btn-delete">Delete</button>
-            <button class="btn-cancel">Cancel</button>
-            <button class="btn-save">Save</button>
-          </div>
-        </form>
-    </div>
-    <!-- End form -->
+            <button class="btn-add-transaction">add transaction</button>
+        </header>
 
-     <!-- Start snackbar -->
-    <div class="snackbar">
-      <p class="snackbar-message">ADD TRANSACTION SUCCESS</p>
-    </div>
-    <!-- End snackbar -->
+        <section class="transaction-list-container">
+            <div class="transaction-title">
+                <button class="summary-button">Summary</button>
+                <button class="transaction-details-button">transaction details</button>
+            </div>
+            <!-- Start Summary Tab -->
+            <section class="summary"></section>
+            <!-- End Summary Tab -->
 
-    <script type="module" src="./javascripts/app.js"></script>
-</body>
+            <!-- Start Transaction list -->
+            <ul class="category-list"></ul>
+
+            <div class="budget-list"></div>
+        </section>
+        <!-- End Transaction list -->
+
+        <!-- Start overlay -->
+        <div class="overlay"></div>
+        <!-- End overlay -->
+
+        <!-- Add, delete transaction form -->
+        <div class="transaction">
+            <div class="transaction-header">
+                <p>Add transaction</p>
+            </div>
+            <form class="transaction-body">
+                <div class="transaction-input-fields">
+                    <div class="input-field">
+                        <label class="title">Date</label>
+                        <input type="date" class="input-date" name="date" />
+                    </div>
+
+                    <div class="input-field">
+                        <label class="title">Category</label>
+                        <div class="category-form">
+                            <img src="assets/images/icon_not_selected.svg" alt="Question Icon" />
+                            <input type="text" name="category" class="input-category" placeholder="Select category" />
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label class="title">Amount</label>
+                        <input type="number" name="outflow" class="input-amount" value="0" />
+                    </div>
+                </div>
+                <div class="error-messages">
+                    <p class="error error-date">Date is required</p>
+                    <p class="error error-category"></p>
+                </div>
+                <div>
+                    <div class="transaction-note">
+                        <label class="title">Note</label>
+                        <input type="text" name="note" class="input-note" placeholder="Note" />
+                    </div>
+                    <p class="error error-note"></p>
+                </div>
+                <div class="action-form">
+                    <button class="btn-delete">Delete</button>
+                    <button class="btn-cancel">Cancel</button>
+                    <button class="btn-save">Save</button>
+                </div>
+            </form>
+        </div>
+        <!-- End form -->
+
+        <!-- Add budget form -->
+        <div class="budget">
+            <div class="transaction-header">
+                <p>Add budget</p>
+            </div>
+            <form class="budget-body">
+                <div class="transaction-input-fields">
+                    <div class="input-field">
+                        <label class="title">Date</label>
+                        <input type="date" class="input-date" name="date" />
+                    </div>
+                    <div class="input-field">
+                        <label class="title">Amount</label>
+                        <input type="number" name="inflow" class="input-amount" value="0" />
+                    </div>
+                </div>
+                <div class="error-messages">
+                    <p class="error error-date">Date is required</p>
+                    <p class="error error-category"></p>
+                </div>
+                <div>
+                    <div class="transaction-note">
+                        <label class="title">Note</label>
+                        <input type="text" name="note" class="input-note" placeholder="Note" />
+                    </div>
+                    <p class="error error-note"></p>
+                </div>
+                <div class="action-form">
+                    <button class="btn-cancel">Cancel</button>
+                    <button class="btn-save-budget">Save</button>
+                </div>
+            </form>
+        </div>
+        <!-- End form -->
+
+        <!-- Start snackbar -->
+        <div class="snackbar">
+            <p class="snackbar-message">ADD TRANSACTION SUCCESS</p>
+        </div>
+        <!-- End snackbar -->
+
+        <script type="module" src="./javascripts/app.js"></script>
+    </body>
 </html>

@@ -1,151 +1,170 @@
 .transaction {
-  background: var(--white-color);
-  width: 848px;
-  height: 368px;
-  margin: 0 auto;
-  border-radius: 4px;
-  display: none;
-  position: absolute;
-  top: 12%;
-  left: 20%;
+    background: var(--white-color);
+    width: 848px;
+    height: 368px;
+    margin: 0 auto;
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+    top: 12%;
+    left: 20%;
 }
 
 .transaction-active {
-  display: block;
+    display: block;
 }
 
 .transaction-header {
-  width: 848px;
-  padding: 20px 40px;
-  border-radius: 4px 4px 0px 0px;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0px 1px 0px 0px #e0e0e0;
-  font-family: var(--primary-font);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.4px;
+    width: 848px;
+    padding: 20px 40px;
+    border-radius: 4px 4px 0px 0px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 1px 0px 0px #e0e0e0;
+    font-family: var(--primary-font);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.4px;
 }
 
-.transaction-body {
-  display: flex;
-  width: 848px;
-  max-height: 810px;
-  padding: 24px 40px 64px 40px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+.transaction-body,
+.budget-body {
+    display: flex;
+    width: 848px;
+    max-height: 810px;
+    padding: 24px 40px 64px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .transaction-input-fields {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
 }
 
 .input-field {
-  display: flex;
-  width: 240px;
-  height: 64px;
-  padding: 6px 16px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    width: 240px;
+    height: 64px;
+    padding: 6px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .input-date {
-  width: 208px;
-  height: 26.5px;
-  font-family: var(--primary-font);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+    width: 208px;
+    height: 26.5px;
+    font-family: var(--primary-font);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
 }
 
 .title {
-  color: rgba(0, 0, 0, 0.54);
-  font-family: var(--primary-font);
-  font-size: var(--font-size-xs);
-  font-style: normal;
-  font-weight: var(--font-weight-medium);
-  line-height: 18px; /* 150% */
+    color: rgba(0, 0, 0, 0.54);
+    font-family: var(--primary-font);
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: var(--font-weight-medium);
+    line-height: 18px; /* 150% */
 }
 
 .input-category {
-  font-family: var(--primary-font);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-  margin-left: 8px;
-  width: 166.9px;
+    font-family: var(--primary-font);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    margin-left: 8px;
+    width: 166.9px;
 }
 
 .category-form {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .input-amount {
-  color: rgba(0, 0, 0, 0.87);
-  font-family: var(--primary-font);
-  font-size: var(--font-size-normal);
-  font-style: normal;
-  font-weight: var(--font-weight-medium);
-  line-height: 20px; /* 125% */
+    color: rgba(0, 0, 0, 0.87);
+    font-family: var(--primary-font);
+    font-size: var(--font-size-normal);
+    font-style: normal;
+    font-weight: var(--font-weight-medium);
+    line-height: 20px; /* 125% */
 }
 
 .transaction-note {
-  display: flex;
-  width: 768px;
-  height: 64px;
-  padding: 6px 63.2px 6px 16px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6.5px;
-  flex: 1 0 0;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    width: 768px;
+    height: 64px;
+    padding: 6px 63.2px 6px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6.5px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .input-note {
-  font-family: var(--primary-font);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+    font-family: var(--primary-font);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
 }
 
 .action-form {
-  align-self: flex-end;
-  margin-top: 10px;
+    align-self: flex-end;
+    margin-top: 10px;
 }
 
 .btn-save,
 .btn-cancel,
-.btn-delete {
-  width: 96px;
-  height: 36px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.12);
-  text-align: center;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 16.1px; /* 115% */
-  text-transform: uppercase;
-  cursor: pointer;
+.btn-delete,
+.btn-save-budget {
+    width: 96px;
+    height: 36px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.12);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.1px; /* 115% */
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-.btn-add-transaction {
-  width: 149.8px;
-  height: 32px;
-  text-align: center;
-  border-radius: 4px;
-  background: #1aa333;
-  cursor: pointer;
-  color: var(--white-color);
-  text-transform: uppercase;
-  font-family: var(--primary-font);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  border: none;
+.btn-add-transaction,
+.btn-add-budget {
+    width: 149.8px;
+    height: 32px;
+    text-align: center;
+    border-radius: 4px;
+    background: #1aa333;
+    cursor: pointer;
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-family: var(--primary-font);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border: none;
+}
+
+.budget {
+    background: var(--white-color);
+    width: 848px;
+    height: 368px;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    display: none;
+}
+
+.budget-active {
+    display: block;
 }

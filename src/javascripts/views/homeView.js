@@ -1,19 +1,22 @@
-import TransactionTemplate from "../templates/transactionTemplate";
-import SummaryTemplate from "../templates/summaryTemplate";
+import TransactionTemplate from '../templates/transactionTemplate';
+import SummaryTemplate from '../templates/summaryTemplate';
+import BudgetTemplate from '../templates/budgetTemplate';
 
 class HomeView {
     constructor() {
-        this.categoryListEl = document.querySelector(".category-list");
-        this.addBtnEl = document.querySelector(".btn-add-transaction");
-        this.summaryTabEl = document.querySelector(".summary");
-        this.showTransactionsTabBtnEl = document.querySelector(".transaction-details-button");
-        this.showSummaryTabBtnEl = document.querySelector(".summary-button");
+        this.categoryListEl = document.querySelector('.category-list');
+        this.addBtnEl = document.querySelector('.btn-add-transaction');
+        this.summaryTabEl = document.querySelector('.summary');
+        this.showTransactionsTabBtnEl = document.querySelector('.transaction-details-button');
+        this.showSummaryTabBtnEl = document.querySelector('.summary-button');
+        this.addBudgetBtnEl = document.querySelector('.btn-add-budget');
+        this.budgetListEl = document.querySelector('.budget-list');
     }
 
-     //----- RENDERING -----//
-     renderTransactionList(transactions) {
-        this.categoryListEl.innerHTML = " ";
-        
+    //----- RENDERING -----//
+    renderTransactionList(transactions) {
+        this.categoryListEl.innerHTML = ' ';
+
         // Create an object to store transactions by category
         const transactionByCategory = {};
 
@@ -21,7 +24,7 @@ class HomeView {
         for (const transaction of transactions) {
             // Get the category of the current transaction
             const category = transaction.category;
-            
+
             // If the category does not exist in the `transactionByCategory` object, create a new one
             if (!transactionByCategory[category]) {
                 transactionByCategory[category] = [];
@@ -34,7 +37,7 @@ class HomeView {
         // Browse through categories and render corresponding transactions
         for (const category in transactionByCategory) {
             const transactions = transactionByCategory[category];
-            
+
             const totalOutFlow = transactions.reduce((total, transaction) => total + transaction.outflow, 0);
 
             this.renderCategory(category, transactions, totalOutFlow);
@@ -42,68 +45,119 @@ class HomeView {
     }
 
     renderSummaryDetails(transactions) {
-        const total = transactions.reduce((totalTransactions, transaction) => totalTransactions + transaction.outflow, 0);
-           
+        const total = transactions.reduce(
+            (totalTransactions, transaction) => totalTransactions + transaction.outflow,
+            0,
+        );
+
         const inflow = 10000000;
 
         this.renderSummaryTab(inflow, total);
 
         this.closeTransactionsList();
+        this.closeBudgetList();
     }
 
     renderCategory(category, transactions, totalOutFlow) {
-       const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
+        const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
 
-       this.categoryListEl.innerHTML += categoryTemplate;
+        this.categoryListEl.innerHTML += categoryTemplate;
     }
 
     closeTransactionsList() {
-        this.categoryListEl.classList.remove("category-list-active");
-        this.summaryTabEl.classList.add("summary-active");
-        this.categoryListEl.classList.add("category-list-hidden");
+        this.categoryListEl.classList.remove('category-list-active');
+        this.summaryTabEl.classList.add('summary-active');
+        this.categoryListEl.classList.add('category-list-hidden');
     }
 
-    closeSummaryTab(){
-        this.categoryListEl.classList.add("category-list-active");
-        this.summaryTabEl.classList.remove("summary-active");
-        this.summaryTabEl.classList.add("summary-hidden");
+    closeSummaryTab() {
+        this.categoryListEl.classList.add('category-list-active');
+        this.summaryTabEl.classList.remove('summary-active');
+        this.summaryTabEl.classList.add('summary-hidden');
+        this.budgetListEl.classList.add('category-list-active');
     }
 
-    renderSummaryTab(inflow, outflow){
+    renderSummaryTab(inflow, outflow) {
         const summaryTemplate = SummaryTemplate.createBalance(inflow, outflow);
 
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 
-    
+    renderBudgetList(budgets) {
+        this.budgetListEl.innerHTML = ' ';
+
+        // Create an object to store transactions by category
+        const budgetByCategory = {};
+
+        // Browse through all transactions
+        for (const budget of budgets) {
+            // Get the category of the current transaction
+            const category = budget.category;
+
+            // If the category does not exist in the `transactionByCategory` object, create a new one
+            if (!budgetByCategory[category]) {
+                budgetByCategory[category] = [];
+            }
+
+            // Add the current transaction to the list of transactions of the corresponding category
+            budgetByCategory[category].push(budget);
+        }
+
+        // Browse through categories and render corresponding transactions
+        for (const category in budgetByCategory) {
+            const budgets = budgetByCategory[category];
+
+            const totalOutFlow = budgets.reduce((total, budget) => total + budget.inflow, 0);
+
+            this.renderBudgetCategory(category, budgets, totalOutFlow);
+        }
+    }
+
+    renderBudgetCategory(category, budgets, totalOutFlow) {
+        const budgetCateagoryTemplate = BudgetTemplate.createBudgetCategory(category, budgets, totalOutFlow);
+
+        this.budgetListEl.innerHTML = budgetCateagoryTemplate;
+    }
+
+    closeBudgetList() {
+        this.budgetListEl.classList.add('category-list-hidden');
+        this.budgetListEl.classList.remove('category-list-active');
+    }
+
     //----- EVENT HANDLER -----//
     addDelegateShowInfo = (renderTransactionInfo) => {
-        this.transactionListEl = this.categoryListEl.querySelector(".transaction-list");
-        this.transactionListEl.addEventListener("click", (event) => {
-            const transactionDetailEl = event.target.closest(".transaction-detail");
-            const transactionId = transactionDetailEl.getAttribute("data-id");
-           
+        this.transactionListEl = this.categoryListEl.querySelector('.transaction-list');
+        this.transactionListEl.addEventListener('click', (event) => {
+            const transactionDetailEl = event.target.closest('.transaction-detail');
+            const transactionId = transactionDetailEl.getAttribute('data-id');
+
             renderTransactionInfo(transactionId);
-        })
-    }
+        });
+    };
 
     addEventRenderPopup = (handler) => {
-        this.addBtnEl.addEventListener("click", () => {
+        this.addBtnEl.addEventListener('click', () => {
             handler();
         });
-    }
+    };
+
+    addEventRenderBudgetPopup = (handler) => {
+        this.addBudgetBtnEl.addEventListener('click', () => {
+            handler();
+        });
+    };
 
     addEventRenderSummary = (handler) => {
-        this.showSummaryTabBtnEl.addEventListener("click", () => {
+        this.showSummaryTabBtnEl.addEventListener('click', () => {
             handler();
         });
-    }
+    };
 
     addEventRenderListTransaction = (handler) => {
-        this.showTransactionsTabBtnEl.addEventListener("click", () => {
+        this.showTransactionsTabBtnEl.addEventListener('click', () => {
             handler();
         });
-    }
+    };
 }
 
 export default HomeView;
