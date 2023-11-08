@@ -1,8 +1,10 @@
-import TransactionService from "./transactionService";
+import BudgetService from './budgetService';
+import TransactionService from './transactionService';
 
 class Service {
-    constructor(){
+    constructor() {
         this.transactionService = new TransactionService();
+        this.budgetService = new BudgetService();
     }
 }
 

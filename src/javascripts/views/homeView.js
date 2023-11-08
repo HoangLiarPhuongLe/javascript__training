@@ -83,38 +83,17 @@ class HomeView {
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 
-    renderBudgetList(budgets) {
+    renderBudgetList(budgets, category) {
         this.budgetListEl.innerHTML = ' ';
+        const filteredBudgets = budgets.filter((budget) => budget.category === category);
 
-        // Create an object to store transactions by category
-        const budgetByCategory = {};
+        const totalInFlow = filteredBudgets.reduce((total, filteredBudget) => total + filteredBudget.inflow, 0);
 
-        // Browse through all transactions
-        for (const budget of budgets) {
-            // Get the category of the current transaction
-            const category = budget.category;
-
-            // If the category does not exist in the `transactionByCategory` object, create a new one
-            if (!budgetByCategory[category]) {
-                budgetByCategory[category] = [];
-            }
-
-            // Add the current transaction to the list of transactions of the corresponding category
-            budgetByCategory[category].push(budget);
-        }
-
-        // Browse through categories and render corresponding transactions
-        for (const category in budgetByCategory) {
-            const budgets = budgetByCategory[category];
-
-            const totalOutFlow = budgets.reduce((total, budget) => total + budget.inflow, 0);
-
-            this.renderBudgetCategory(category, budgets, totalOutFlow);
-        }
+        this.renderBudgetCategory(category, filteredBudgets, totalInFlow);
     }
 
-    renderBudgetCategory(category, budgets, totalOutFlow) {
-        const budgetCateagoryTemplate = BudgetTemplate.createBudgetCategory(category, budgets, totalOutFlow);
+    renderBudgetCategory(category, budgets, totalInFlow) {
+        const budgetCateagoryTemplate = BudgetTemplate.createBudgetCategory(category, budgets, totalInFlow);
 
         this.budgetListEl.innerHTML = budgetCateagoryTemplate;
     }
