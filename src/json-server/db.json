@@ -6,48 +6,70 @@
       "password": "phuongle123"
     }
   ],
-  "wallet": [],
-  "transaction": [
+  "budget": [
     {
-      "id": 4,
-      "category": "Ăn Uống",
-      "date": "2023-11-14",
-      "note": " Bánh Cuốn",
-      "outflow": -15000
-    },
-    {
-      "id": 12,
-      "category": "Ăn Uống",
       "date": "2023-11-10",
-      "note": "Bánh Bèo",
-      "outflow": -15000
+      "note": "ádasdasd",
+      "inflow": 20000,
+      "category": "Other Income",
+      "id": 2
     },
     {
-      "id": 13,
-      "category": "Ăn Uống",
-      "date": "2023-11-10",
-      "note": "Bún Chả",
-      "outflow": -20000
-    },
-    {
-      "id": 14,
-      "category": "Ăn Uống",
       "date": "2023-11-11",
-      "note": "Hủ Tiếu",
-      "outflow": -15000
+      "note": "ểtrtert",
+      "inflow": 20000,
+      "category": "Other Income",
+      "id": 3
     },
     {
-      "id": 15,
-      "category": "Ăn Uống",
-      "date": "2023-11-09",
-      "note": "Bánh Canh",
-      "outflow": -20000
+      "date": "2023-11-14",
+      "note": "jkljkljk",
+      "inflow": 20000,
+      "category": "Other Income",
+      "id": 4
     },
+    {
+      "date": "2023-11-11",
+      "note": "dfgdfgdfg",
+      "inflow": 20000,
+      "category": "Other Income",
+      "id": 5
+    },
+    {
+      "date": "2023-11-15",
+      "note": "sdfsdfsdf",
+      "inflow": 20000,
+      "category": "Other Income",
+      "id": 6
+    },
+    {
+      "date": "2023-11-11",
+      "note": "sdfsdffgh",
+      "inflow": 50000,
+      "category": "Other Income",
+      "id": 7
+    }
+  ],
+  "transaction": [
     {
       "id": 16,
       "category": "Ăn Uống",
-      "date": "2023-11-08",
+      "date": "2023-11-07",
+      "note": "Bánh Mỳ ",
+      "outflow": -15000
+    },
+    {
+      "id": 17,
+      "category": "Ăn Uống",
+      "date": "2023-11-18",
       "note": "Bún Mắm",
+      "outflow": -20000
+    },
+    {
+      "id": 18,
+      "category": "Ăn Uống",
+      "date": "2023-11-10",
+      "note": "ádasdasd",
       "outflow": -20000
     }
   ]

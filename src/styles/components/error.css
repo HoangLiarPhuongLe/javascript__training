@@ -1,13 +1,15 @@
 .error-messages {
-  display: flex;
-  flex-direction: row;
-  gap: 165px;
+    display: flex;
+    flex-direction: row;
+    gap: 165px;
 }
 
-.error-note {
-  margin-top: 10px;
+.error-note,
+.error-note-budget {
+    margin-top: 10px;
 }
 
-.error {
-  visibility: hidden;
+.error,
+.error-budget {
+    visibility: hidden;
 }
