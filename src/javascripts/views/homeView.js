@@ -44,13 +44,13 @@ class HomeView {
         }
     }
 
-    renderSummaryDetails(transactions) {
+    renderSummaryDetails(transactions, budgets) {
         const total = transactions.reduce(
             (totalTransactions, transaction) => totalTransactions + transaction.outflow,
             0,
         );
 
-        const inflow = 10000000;
+        const inflow = budgets.reduce((totalBudgets, budget) => totalBudgets + budget.inflow, 0);
 
         this.renderSummaryTab(inflow, total);
 
