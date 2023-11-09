@@ -101,7 +101,8 @@ class TransactionController {
 
     loadListBudgets = async () => {
         const budgets = this.service.budgetService.getBudgets();
-        const category = 'Other Income';
+        const category = 'Budget';
+
         await this.view.homeView.renderBudgetList(budgets, category);
     };
 

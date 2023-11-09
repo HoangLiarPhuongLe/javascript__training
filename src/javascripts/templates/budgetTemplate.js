@@ -19,14 +19,10 @@ class BudgetTemplate {
             <div class="transaction-info">
               <div class="datetime">
                 <p class="date-text">${new Date(budget.date).getDate()}</p>
-                <div>
-                  <div class="daymonthyear">
-                    <p class="daymonthyear-text">${budgetDate[2]}</p>
-                    <p class="daymonthyear-text">${budgetDate[0]}</p>
-                    <p class= "daymonthyear-text">${budgetDate[1]}</p>
-                  </div>
+                <div class="daymonthyear-note">
+                  <p class="daymonthyear-text">${budgetDate[2]} ${budgetDate[0]} ${budgetDate[1]}</p>
                   <p class="note-text">${budget.note}</p>
-                 </div>
+                </div>
               </div>
               <p class="amount-income">+$ ${formatNumber(Math.abs(budget.inflow))}</p>
             </div>

@@ -11,24 +11,31 @@
       "date": "2023-11-15",
       "note": "Tiền ăn vặt",
       "inflow": 20000000,
-      "category": "Other Income",
+      "category": "Budget",
       "id": 8
+    },
+    {
+      "date": "2023-11-18",
+      "note": "Tiền thưởng",
+      "inflow": 500000,
+      "category": "Budget",
+      "id": 9
     }
   ],
   "transaction": [
     {
-      "id": 16,
+      "id": 19,
       "category": "Ăn Uống",
-      "date": "2023-11-07",
+      "date": "2023-11-11",
       "note": "Bánh Mỳ ",
       "outflow": -15000
     },
     {
-      "id": 18,
+      "id": 20,
       "category": "Ăn Uống",
-      "date": "2023-11-17",
-      "note": "Mỳ Quảng Cá",
-      "outflow": -15000
+      "date": "2023-11-11",
+      "note": "Cơm Tấm Sườn",
+      "outflow": -50000
     }
   ]
 }

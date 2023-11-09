@@ -4,7 +4,7 @@ class Budget {
         this.date = data.date;
         this.note = data.note;
         this.inflow = data.inflow;
-        this.category = 'Other Income';
+        this.category = 'Budget';
     }
 }
 export default Budget;
