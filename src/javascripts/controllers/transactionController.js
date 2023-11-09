@@ -81,6 +81,7 @@ class TransactionController {
     addSummaryTab = () => {
         const transactions = this.service.transactionService.getTransactions();
         const budgets = this.service.budgetService.getBudgets();
+
         this.view.homeView.renderSummaryDetails(transactions, budgets);
     };
 
