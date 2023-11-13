@@ -105,12 +105,14 @@ class HomeView {
 
     //----- EVENT HANDLER -----//
     addDelegateShowInfo = (renderTransactionInfo) => {
-        this.transactionListEl = this.categoryListEl.querySelector('.transaction-list');
-        this.transactionListEl.addEventListener('click', (event) => {
-            const transactionDetailEl = event.target.closest('.transaction-detail');
-            const transactionId = transactionDetailEl.getAttribute('data-id');
+        this.transactionListEls = this.categoryListEl.querySelectorAll('.transaction-list');
+        this.transactionListEls.forEach((transactionListEl) => {
+            transactionListEl.addEventListener('click', (event) => {
+                const transactionDetailEl = event.target.closest('.transaction-detail');
+                const transactionId = transactionDetailEl.getAttribute('data-id');
 
-            renderTransactionInfo(transactionId);
+                renderTransactionInfo(transactionId);
+            });
         });
     };
 

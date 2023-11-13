@@ -20,6 +20,20 @@
       "inflow": 500000,
       "category": "Budget",
       "id": 9
+    },
+    {
+      "date": "2023-11-14",
+      "note": "Tiền NCKH",
+      "inflow": 500000,
+      "category": "Budget",
+      "id": 10
+    },
+    {
+      "date": "2023-11-22",
+      "note": "Tiền thưởng sinh viên giỏi",
+      "inflow": 500000,
+      "category": "Budget",
+      "id": 11
     }
   ],
   "transaction": [
@@ -27,14 +41,28 @@
       "id": 19,
       "category": "Ăn Uống",
       "date": "2023-11-11",
-      "note": "Bánh Mỳ ",
+      "note": "Bánh Canh",
       "outflow": -15000
     },
     {
       "id": 20,
       "category": "Ăn Uống",
-      "date": "2023-11-11",
-      "note": "Cơm Tấm Sườn",
+      "date": "2023-11-18",
+      "note": "Mỳ Quảng Trứng",
+      "outflow": -20000
+    },
+    {
+      "id": 21,
+      "category": "Ăn Uống",
+      "date": "2023-11-15",
+      "note": "Ăn Sáng",
+      "outflow": -15000
+    },
+    {
+      "id": 22,
+      "category": "Ăn Uống",
+      "date": "2023-11-17",
+      "note": "Bánh Xèo",
       "outflow": -50000
     }
   ]
