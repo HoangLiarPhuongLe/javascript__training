@@ -16,6 +16,8 @@ class HomeView {
     //----- RENDERING -----//
     renderTransactionList(transactions) {
         this.categoryListEl.innerHTML = ' ';
+        this.showSummaryTabBtnEl.classList.remove('summary-button-active');
+        this.showTransactionsTabBtnEl.classList.add('transaction-details-button-active');
 
         // Create an object to store transactions by category
         const transactionByCategory = {};
@@ -56,6 +58,8 @@ class HomeView {
 
         this.closeTransactionsList();
         this.closeBudgetList();
+        this.showTransactionsTabBtnEl.classList.remove('transaction-details-button-active');
+        this.showSummaryTabBtnEl.classList.add('summary-button-active');
     }
 
     renderCategory(category, transactions, totalOutFlow) {
@@ -130,12 +134,16 @@ class HomeView {
 
     addEventRenderSummary = (handler) => {
         this.showSummaryTabBtnEl.addEventListener('click', () => {
+            this.showTransactionsTabBtnEl.classList.remove('transaction-details-button-active');
+            this.showSummaryTabBtnEl.classList.add('summary-button-active');
             handler();
         });
     };
 
     addEventRenderListTransaction = (handler) => {
         this.showTransactionsTabBtnEl.addEventListener('click', () => {
+            this.showSummaryTabBtnEl.classList.remove('summary-button-active');
+            this.showTransactionsTabBtnEl.classList.add('transaction-details-button-active');
             handler();
         });
     };

@@ -21,9 +21,9 @@ class TransactionController {
         await this.service.transactionService.initTransactionList();
         this.loadListTransactions();
         this.view.homeView.addEventRenderPopup(this.addTransaction);
+        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
         this.view.homeView.addEventRenderListTransaction(this.addTransactionDetails);
         this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
-        this.view.homeView.addEventRenderSummary(this.addSummaryTab);
     }
 
     loadListTransactions = async () => {
@@ -61,6 +61,7 @@ class TransactionController {
      * Initializing the Popup interface and event handlers
      */
     async initPopup() {
+        this.view.transactionView.addEventCancelPopup();
         this.view.transactionView.addEventAddTransaction(this.saveTransaction);
         this.view.transactionView.addEventDeleteTransaction(this.deleteTransaction);
     }
@@ -118,6 +119,7 @@ class TransactionController {
      * Initializing the Popup interface and event handlers
      */
     async initPopupBudget() {
+        this.view.budgetView.addEventCancelBudgetPopup();
         this.view.budgetView.addEventAddBudget(this.saveBudget);
     }
 

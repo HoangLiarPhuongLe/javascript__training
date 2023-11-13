@@ -78,10 +78,6 @@ export const validateBudget = (data) => {
             field: 'date',
             requiredMessage: MESSAGE.DATE_REQUIRED,
         },
-        {
-            field: 'note',
-            requiredMessage: MESSAGE.NOTE_REQUIRED,
-        },
     ];
 
     for (const field of budgetFields) {

@@ -122,7 +122,8 @@
 .btn-save,
 .btn-cancel,
 .btn-delete,
-.btn-save-budget {
+.btn-save-budget,
+.btn-cancel-budget {
     width: 96px;
     height: 36px;
     border-radius: 4px;
@@ -135,6 +136,19 @@
     line-height: 16.1px; /* 115% */
     text-transform: uppercase;
     cursor: pointer;
+    border: none;
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.btn-save:hover,
+.btn-save-budget:hover,
+.btn-cancel:hover,
+.btn-cancel-budget:hover {
+    color: var(--green-color);
+}
+
+.btn-delete:hover {
+    color: var(--red-light-color);
 }
 
 .btn-add-transaction,
