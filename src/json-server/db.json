@@ -34,6 +34,13 @@
       "inflow": 500000,
       "category": "Budget",
       "id": 11
+    },
+    {
+      "date": "2023-11-18",
+      "note": "Tiền được miễn giảm",
+      "inflow": 1000000,
+      "category": "Budget",
+      "id": 12
     }
   ],
   "transaction": [
@@ -41,7 +48,7 @@
       "id": 19,
       "category": "Ăn Uống",
       "date": "2023-11-11",
-      "note": "Bánh Canh",
+      "note": "Bánh Mỳ",
       "outflow": -15000
     },
     {
@@ -52,18 +59,18 @@
       "outflow": -20000
     },
     {
-      "id": 21,
-      "category": "Ăn Uống",
-      "date": "2023-11-15",
-      "note": "Ăn Sáng",
-      "outflow": -15000
-    },
-    {
       "id": 22,
       "category": "Ăn Uống",
       "date": "2023-11-17",
       "note": "Bánh Xèo",
       "outflow": -50000
+    },
+    {
+      "id": 23,
+      "category": "Ăn Uống",
+      "date": "2023-11-18",
+      "note": "Bánh bao",
+      "outflow": -15000
     }
   ]
 }
