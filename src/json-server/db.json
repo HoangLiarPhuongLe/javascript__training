@@ -71,6 +71,13 @@
       "date": "2023-11-18",
       "note": "Bánh bao",
       "outflow": -15000
+    },
+    {
+      "id": 24,
+      "category": "Ăn Uống",
+      "date": "2023-11-17",
+      "note": "Cơm phần",
+      "outflow": -20000
     }
   ]
 }
