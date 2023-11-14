@@ -6,12 +6,18 @@ class BudgetView {
         this.overlayElement = document.querySelector('.overlay');
         this.buttonSaveBudgetElement = document.querySelector('.btn-save-budget');
         this.buttonCancelBudgetElement = document.querySelector('.btn-cancel-budget');
+        this.inputDayEl = document.getElementById('today');
     }
 
     //----- RENDERING -----//
     renderBudgetPopup() {
         this.budgetElement.classList.add('budget-active');
         this.overlayElement.classList.add('overlay-active');
+
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+
+        this.inputDayEl.value = formattedDate;
     }
 
     closeBudgetPopup() {

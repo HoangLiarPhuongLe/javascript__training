@@ -34,6 +34,13 @@
             "inflow": 500000,
             "category": "Budget",
             "id": 11
+        },
+        {
+            "date": "2023-11-14",
+            "note": "",
+            "inflow": 50000,
+            "category": "Budget",
+            "id": 12
         }
     ],
     "transaction": [
@@ -41,15 +48,15 @@
             "id": 23,
             "category": "Ăn Uống",
             "date": "2023-11-18",
-            "note": "Bánh Căn",
+            "note": "Bánh Mỳ",
             "outflow": -15000
         },
         {
             "id": 24,
             "category": "Ăn Uống",
-            "date": "2023-11-28",
-            "note": "Bánh Xèo",
-            "outflow": -50000
+            "date": "2023-11-18",
+            "note": "Mỳ Quảng",
+            "outflow": -20000
         }
     ]
 }
