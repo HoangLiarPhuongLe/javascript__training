@@ -21,7 +21,7 @@ class BudgetTemplate {
                 <p class="date-text">${new Date(budget.date).getDate()}</p>
                 <div class="daymonthyear-note">
                   <p class="daymonthyear-text">${budgetDate[2]} ${budgetDate[0]} ${budgetDate[1]}</p>
-                  <p class="note-text">${budget.note}</p>
+                  <p class="note-text">${budget.note ? budget.note : 'Text Note'}</p>
                 </div>
               </div>
               <p class="amount-income">+$ ${formatNumber(Math.abs(budget.inflow))}</p>

@@ -5,12 +5,19 @@ class BudgetView {
         this.budgetBodyElement = document.querySelector('.budget-body');
         this.overlayElement = document.querySelector('.overlay');
         this.buttonSaveBudgetElement = document.querySelector('.btn-save-budget');
+        this.buttonCancelBudgetElement = document.querySelector('.btn-cancel-budget');
+        this.inputDayEl = document.getElementById('today');
     }
 
     //----- RENDERING -----//
     renderBudgetPopup() {
         this.budgetElement.classList.add('budget-active');
         this.overlayElement.classList.add('overlay-active');
+
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+
+        this.inputDayEl.value = formattedDate;
     }
 
     closeBudgetPopup() {
@@ -27,6 +34,19 @@ class BudgetView {
     }
 
     //----- EVENT LISTENER -----//
+    addEventCancelBudgetPopup = () => {
+        this.buttonCancelBudgetElement.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const errorElements = document.querySelectorAll('.error-budget');
+
+            this.budgetBodyElement.reset();
+            this.budgetElement.classList.remove('budget-active');
+            this.overlayElement.classList.remove('overlay-active');
+            this.clearErrorMessage(errorElements);
+        });
+    };
+
     addEventAddBudget = (addBudget) => {
         this.buttonSaveBudgetElement?.addEventListener('click', async (e) => {
             e.preventDefault();
@@ -54,7 +74,6 @@ class BudgetView {
     showErrorMessage = (errors) => {
         const errorElements = {
             date: document.querySelector('.error-date-budget'),
-            note: document.querySelector('.error-note-budget'),
         };
 
         errors.forEach((error) => {
