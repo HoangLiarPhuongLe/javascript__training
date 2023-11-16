@@ -49,14 +49,14 @@
             "category": "Ăn Uống",
             "date": "2023-11-18",
             "note": "Bánh Mỳ",
-            "outflow": -15000
+            "outflow": 15000
         },
         {
             "id": 24,
             "category": "Ăn Uống",
             "date": "2023-11-18",
             "note": "Mỳ Quảng",
-            "outflow": -20000
+            "outflow": 20000
         }
     ]
 }

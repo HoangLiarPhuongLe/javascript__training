@@ -94,7 +94,6 @@ class TransactionView {
         const errorElements = {
             date: document.querySelector('.error-date'),
             category: document.querySelector('.error-category'),
-            note: document.querySelector('.error-note'),
         };
 
         errors.forEach((error) => {

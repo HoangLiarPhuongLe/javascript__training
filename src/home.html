@@ -49,7 +49,7 @@
                 <div class="transaction-input-fields">
                     <div class="input-field">
                         <label class="title">Date</label>
-                        <input type="date" class="input-date" name="date" min="2023-01-01" max="2023-12-31" />
+                        <input type="date" class="input-date" name="date" max="9999-12-31" maxlength="4" />
                     </div>
 
                     <div class="input-field">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="input-field">
                         <label class="title">Amount</label>
-                        <input type="number" name="outflow" class="input-amount" value="0" />
+                        <input type="number" name="outflow" class="input-amount" value="0" min="0" />
                     </div>
                 </div>
                 <div class="error-messages">
@@ -71,7 +71,7 @@
                 <div>
                     <div class="transaction-note">
                         <label class="title">Note</label>
-                        <input type="text" name="note" class="input-note" placeholder="Note" />
+                        <input type="text" name="note" class="input-note" placeholder="Note" maxlength="80" />
                     </div>
                     <p class="error error-note"></p>
                 </div>
@@ -93,18 +93,11 @@
                 <div class="transaction-input-fields">
                     <div class="input-field">
                         <label class="title">Date</label>
-                        <input
-                            type="date"
-                            id="today"
-                            class="input-date"
-                            name="date"
-                            min="2023-01-01"
-                            max="2023-12-31"
-                        />
+                        <input type="date" id="today" class="input-date" name="date" max="9999-12-31" maxlength="4" />
                     </div>
                     <div class="input-field">
                         <label class="title">Amount</label>
-                        <input type="number" name="inflow" class="input-amount" value="0" />
+                        <input type="number" name="inflow" class="input-amount" value="0" min="0" />
                     </div>
                 </div>
                 <div class="error-messages">
@@ -113,7 +106,7 @@
                 <div>
                     <div class="transaction-note">
                         <label class="title">Note</label>
-                        <input type="text" name="note" class="input-note" placeholder="Note" />
+                        <input type="text" name="note" class="input-note" placeholder="Note" maxlength="80" />
                     </div>
                     <p class="error-budget error-note-budget"></p>
                 </div>
