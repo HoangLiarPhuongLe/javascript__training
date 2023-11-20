@@ -17,7 +17,7 @@ class BudgetService {
     };
 
     /**
-     * Parsing data from JSON object to list of Transaction object
+     * Parsing data from JSON object to list of Budget object
      * @param {JSON} data
      */
     parseData = (data) => {
@@ -32,6 +32,10 @@ class BudgetService {
         return this.budgetList;
     }
 
+    /**
+     * Add budget to database.
+     * @param {Object} budget
+     */
     addBudget = async (data) => {
         const budget = new Budget(data);
         await this.api.addBudget(budget);

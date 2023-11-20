@@ -38,12 +38,20 @@ class TransactionService {
         return transaction;
     };
 
+    /**
+     * Add transaction to database.
+     * @param {Object} transaction
+     */
     addTransaction = async (data) => {
         const transaction = new Transaction(data);
         await this.api.addTransaction(transaction);
         this.transactionList.push(transaction);
     };
 
+    /**
+     * Edit transaction from database.
+     * @param {Object} transaction
+     */
     updateTransaction = async (data) => {
         const transaction = new Transaction(data);
 
@@ -56,6 +64,10 @@ class TransactionService {
         });
     };
 
+    /**
+     * Delete transaction from database.
+     * @param {Object} transaction
+     */
     deleteTransaction = async (id) => {
         await this.api.deleteTransactionById(id);
         const index = this.transactionList.findIndex((item) => item.id == id);

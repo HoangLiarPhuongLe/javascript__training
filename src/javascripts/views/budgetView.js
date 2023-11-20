@@ -7,10 +7,16 @@ class BudgetView {
         this.buttonSaveBudgetElement = document.querySelector('.btn-save-budget');
         this.buttonCancelBudgetElement = document.querySelector('.btn-cancel-budget');
         this.inputDayEl = document.getElementById('today');
+        this.inputAmount = document.getElementById('budgetamount');
     }
 
     //----- RENDERING -----//
+
+    /**
+     * Display the popup for adding a budget.
+     */
     renderBudgetPopup() {
+        this.buttonSaveBudgetElement.disabled = true;
         this.budgetElement.classList.add('budget-active');
         this.overlayElement.classList.add('overlay-active');
 
@@ -18,6 +24,7 @@ class BudgetView {
         const formattedDate = today.toISOString().split('T')[0];
 
         this.inputDayEl.value = formattedDate;
+        this.changeBtnStyle();
     }
 
     closeBudgetPopup() {
@@ -34,6 +41,10 @@ class BudgetView {
     }
 
     //----- EVENT LISTENER -----//
+
+    /**
+     * Add event listener for cancel budget popup.
+     */
     addEventCancelBudgetPopup = () => {
         this.buttonCancelBudgetElement.addEventListener('click', (event) => {
             event.preventDefault();
@@ -47,6 +58,10 @@ class BudgetView {
         });
     };
 
+    /**
+     * Add event listener for form submission.
+     * @param {Function} addBudget
+     */
     addEventAddBudget = (addBudget) => {
         this.buttonSaveBudgetElement?.addEventListener('click', async (e) => {
             e.preventDefault();
@@ -64,7 +79,7 @@ class BudgetView {
                 this.showErrorMessage(errors);
             } else {
                 await addBudget(budget);
-                this.resetBudgetPopup();
+                this.budgetBodyElement.reset();
                 this.clearErrorMessage(errorElements);
                 this.closeBudgetPopup();
             }
@@ -85,6 +100,18 @@ class BudgetView {
     clearErrorMessage = (errorElements) => {
         errorElements.forEach((errorElement) => {
             errorElement.classList.remove('error-message');
+        });
+    };
+
+    changeBtnStyle = () => {
+        this.buttonSaveBudgetElement.classList.remove('btn-save-active');
+        this.inputAmount.addEventListener('change', () => {
+            if (this.inputAmount != 0) {
+                this.buttonSaveBudgetElement.disabled = false;
+                this.buttonSaveBudgetElement.classList.add('btn-save-active');
+            } else {
+                this.buttonSaveBudgetElement.disabled = true;
+            }
         });
     };
 }
