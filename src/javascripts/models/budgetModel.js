@@ -1,4 +1,8 @@
 class Budget {
+    /**
+     * Constructor of Budget object
+     * @param {Object} data
+     */
     constructor(data) {
         this.id = data.id;
         this.date = data.date;

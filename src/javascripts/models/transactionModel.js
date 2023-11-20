@@ -1,4 +1,8 @@
 class Transaction {
+    /**
+     * Constructor of Transaction object
+     * @param {Object} data
+     */
     constructor(data) {
         this.id = data.id;
         this.category = data.category;

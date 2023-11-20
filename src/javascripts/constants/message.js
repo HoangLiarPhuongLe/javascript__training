@@ -14,7 +14,7 @@ export const ERROR_MESSAGE = {
 };
 
 export const ADD_TRANSACTION_MESSAGE = {
-    ADD_TRANSACTION_SUCCESS: 'Add Transaction Succcess!',
+    ADD_TRANSACTION_SUCCESS: 'Add Transaction Success!',
     UPDATE_TRANSACTION_SUCCESS: 'Update Transaction Success!',
 };
 
@@ -24,5 +24,5 @@ export const DELETE_TRANSACTION_MESSAGE = {
 };
 
 export const ADD_BUDGET_MESSAGE = {
-    ADD_BUDGET_SUCCESS: 'Add Budget Succcess!',
+    ADD_BUDGET_SUCCESS: 'Add Budget Success!',
 };

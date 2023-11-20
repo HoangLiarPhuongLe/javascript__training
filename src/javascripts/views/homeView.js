@@ -14,6 +14,11 @@ class HomeView {
     }
 
     //----- RENDERING -----//
+
+    /**
+     * Display the transaction list by category.
+     * @param {Array} transactions
+     */
     renderTransactionList(transactions) {
         this.categoryListEl.innerHTML = ' ';
         this.showSummaryTabBtnEl.classList.remove('summary-button-active');
@@ -62,6 +67,10 @@ class HomeView {
         this.showSummaryTabBtnEl.classList.add('summary-button-active');
     }
 
+    /**
+     * Display the category list.
+     * @param {Array} categories
+     */
     renderCategory(category, transactions, totalOutFlow) {
         const categoryTemplate = TransactionTemplate.createCategory(category, transactions, totalOutFlow);
 
@@ -87,6 +96,10 @@ class HomeView {
         this.summaryTabEl.innerHTML = summaryTemplate;
     }
 
+    /**
+     * Display the budget list.
+     * @param {Array} budgets
+     */
     renderBudgetList(budgets, category) {
         this.budgetListEl.innerHTML = ' ';
         const filteredBudgets = budgets.filter((budget) => budget.category === category);
@@ -96,6 +109,9 @@ class HomeView {
         this.renderBudgetCategory(category, filteredBudgets, totalInFlow);
     }
 
+    /**
+     * Display the category of budgets.
+     */
     renderBudgetCategory(category, budgets, totalInFlow) {
         const budgetCateagoryTemplate = BudgetTemplate.createBudgetCategory(category, budgets, totalInFlow);
 
@@ -108,6 +124,11 @@ class HomeView {
     }
 
     //----- EVENT HANDLER -----//
+
+    /**
+     * Add delegate lisnter showing transaction information actions to each transaction element.
+     * @param {Function} renderTransactionInfo
+     */
     addDelegateShowInfo = (renderTransactionInfo) => {
         this.transactionListEls = this.categoryListEl.querySelectorAll('.transaction-list');
         this.transactionListEls.forEach((transactionListEl) => {

@@ -40,7 +40,7 @@
         <div class="overlay"></div>
         <!-- End overlay -->
 
-        <!-- Add, delete transaction form -->
+        <!-- Add transaction form -->
         <div class="transaction">
             <div class="transaction-header">
                 <p>Add transaction</p>
@@ -56,12 +56,25 @@
                         <label class="title">Category</label>
                         <div class="category-form">
                             <img src="assets/images/icon_not_selected.svg" alt="Question Icon" />
-                            <input type="text" name="category" class="input-category" placeholder="Select category" />
+                            <select name="category" class="input-category">
+                                <optgroup label="Select Category">
+                                    <option>Ăn Uống</option>
+                                    <option>Cà Phê</option>
+                                    <option>Đi lại</option>
+                                </optgroup>
+                            </select>
                         </div>
                     </div>
                     <div class="input-field">
                         <label class="title">Amount</label>
-                        <input type="number" name="outflow" class="input-amount" value="0" min="0" />
+                        <input
+                            type="number"
+                            id="transactionamount"
+                            name="outflow"
+                            class="input-amount"
+                            value="0"
+                            min="0"
+                        />
                     </div>
                 </div>
                 <div class="error-messages">
@@ -76,9 +89,65 @@
                     <p class="error error-note"></p>
                 </div>
                 <div class="action-form">
-                    <button class="btn-delete">Delete</button>
-                    <button class="btn-cancel">Cancel</button>
-                    <button class="btn-save">Save</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                    <button class="btn btn-save" disabled>Save</button>
+                </div>
+            </form>
+        </div>
+        <!-- End form -->
+
+        <!-- Edit, delete transaction form -->
+        <div class="edit-transaction">
+            <div class="transaction-header">
+                <p>Edit transaction</p>
+            </div>
+            <form class="edit-transaction-body">
+                <div class="transaction-input-fields">
+                    <div class="input-field">
+                        <label class="title">Date</label>
+                        <input type="date" class="input-date" name="date" max="9999-12-31" maxlength="4" />
+                    </div>
+
+                    <div class="input-field">
+                        <label class="title">Category</label>
+                        <div class="category-form">
+                            <img src="assets/images/icon_not_selected.svg" alt="Question Icon" />
+                            <select name="category" class="input-category">
+                                <optgroup label="Select Category">
+                                    <option>Ăn Uống</option>
+                                    <option>Cà Phê</option>
+                                    <option>Đi lại</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label class="title">Amount</label>
+                        <input
+                            type="number"
+                            id="transactionamount"
+                            name="outflow"
+                            class="input-amount"
+                            value="0"
+                            min="0"
+                        />
+                    </div>
+                </div>
+                <div class="error-messages">
+                    <p class="error error-date">Date is required</p>
+                    <p class="error error-category"></p>
+                </div>
+                <div>
+                    <div class="transaction-note">
+                        <label class="title">Note</label>
+                        <input type="text" name="note" class="input-note" placeholder="Note" maxlength="80" />
+                    </div>
+                    <p class="error error-note"></p>
+                </div>
+                <div class="action-form">
+                    <button class="btn btn-delete">Delete</button>
+                    <button class="btn btn-cancel-edit">Cancel</button>
+                    <button class="btn btn-save-edit">Save</button>
                 </div>
             </form>
         </div>
@@ -97,7 +166,7 @@
                     </div>
                     <div class="input-field">
                         <label class="title">Amount</label>
-                        <input type="number" name="inflow" class="input-amount" value="0" min="0" />
+                        <input type="number" id="budgetamount" name="inflow" class="input-amount" value="0" min="0" />
                     </div>
                 </div>
                 <div class="error-messages">
@@ -111,8 +180,8 @@
                     <p class="error-budget error-note-budget"></p>
                 </div>
                 <div class="action-form">
-                    <button class="btn-cancel-budget">Cancel</button>
-                    <button class="btn-save-budget">Save</button>
+                    <button class="btn btn-cancel-budget">Cancel</button>
+                    <button class="btn btn-save-budget" disabled>Save</button>
                 </div>
             </form>
         </div>

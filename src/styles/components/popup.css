@@ -1,4 +1,5 @@
-.transaction {
+.transaction,
+.edit-transaction {
     background: var(--white-color);
     width: 848px;
     height: 368px;
@@ -10,7 +11,8 @@
     left: 20%;
 }
 
-.transaction-active {
+.transaction-active,
+.edit-transaction-active {
     display: block;
 }
 
@@ -27,7 +29,8 @@
 }
 
 .transaction-body,
-.budget-body {
+.budget-body,
+.edit-transaction-body {
     display: flex;
     width: 848px;
     max-height: 810px;
@@ -120,36 +123,26 @@
     margin-top: 10px;
 }
 
-.btn-save,
+.disabled {
+    pointer-events: none;
+}
+
+.btn-delete {
+    color: var(--white-color);
+    background: var(--red-light-color);
+}
+
 .btn-cancel,
-.btn-delete,
-.btn-save-budget,
-.btn-cancel-budget {
-    width: 96px;
-    height: 36px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.12);
-    text-align: center;
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16.1px; /* 115% */
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    color: rgba(0, 0, 0, 0.26);
+.btn-cancel-budget,
+.btn-cancel-edit {
+    color: var(--white-color);
+    background: var(--black-color);
 }
 
-.btn-save:hover,
-.btn-save-budget:hover,
-.btn-cancel:hover,
-.btn-cancel-budget:hover {
-    color: var(--green-color);
-}
-
-.btn-delete:hover {
-    color: var(--red-light-color);
+.btn-save-active,
+.btn-save-edit {
+    color: var(--white-color);
+    background: var(--green-color);
 }
 
 .btn-add-transaction,

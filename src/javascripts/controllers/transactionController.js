@@ -26,24 +26,42 @@ class TransactionController {
         this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
     }
 
+    /**
+     * Load and display the transaction list.
+     */
     loadListTransactions = async () => {
         const transactions = this.service.transactionService.getTransactions();
         await this.view.homeView.renderTransactionList(transactions);
     };
 
+    /**
+     * Add a transaction and display the new transaction list.
+     * @param {object} transaction
+     */
     saveTransaction = async (data) => {
-        if (!data.id) {
-            await this.service.transactionService.addTransaction(data);
-            this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCESS);
-        } else {
-            await this.service.transactionService.updateTransaction(data);
-            this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.UPDATE_TRANSACTION_SUCCESS);
-        }
+        await this.service.transactionService.addTransaction(data);
+        this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.ADD_TRANSACTION_SUCCESS);
 
         this.loadListTransactions();
         this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
     };
 
+    /**
+     * Edit a transaction and display the new transaction list.
+     * @param {object} transaction
+     */
+    editTransaction = async (data) => {
+        await this.service.transactionService.updateTransaction(data);
+        this.view.snackbar.showSnackBar('success', ADD_TRANSACTION_MESSAGE.UPDATE_TRANSACTION_SUCCESS);
+
+        this.loadListTransactions();
+        this.view.homeView.addDelegateShowInfo(this.renderTransactionInfo);
+    };
+
+    /**
+     * Delete a transaction by ID action.
+     * @param {string} transactionId
+     */
     deleteTransaction = async (transactionId) => {
         if (transactionId) {
             await this.service.transactionService.deleteTransaction(transactionId);
@@ -62,17 +80,26 @@ class TransactionController {
      */
     async initPopup() {
         this.view.transactionView.addEventCancelPopup();
+        this.view.transactionView.addEventCancelEditPopup();
         this.view.transactionView.addEventAddTransaction(this.saveTransaction);
+        this.view.transactionView.addEventEditTransaction(this.editTransaction);
         this.view.transactionView.addEventDeleteTransaction(this.deleteTransaction);
     }
 
+    /**
+     * Show a popup when click add transaction.
+     */
     addTransaction = () => {
         this.view.transactionView.renderPopup();
     };
 
+    /**
+     * Show a modal for editing and deleting when click a transaction.
+     * @param {string} transactionId
+     */
     renderTransactionInfo = async (transactionId) => {
         const transaction = await this.service.transactionService.getTransactionById(transactionId);
-        this.view.transactionView.renderPopup(transactionId, transaction);
+        this.view.transactionView.renderEditPopup(transactionId, transaction);
     };
 
     getTransactionById = (id) => {
@@ -100,6 +127,9 @@ class TransactionController {
         this.view.homeView.addEventRenderBudgetPopup(this.addBudget);
     }
 
+    /**
+     * Load and display the budget list.
+     */
     loadListBudgets = async () => {
         const budgets = this.service.budgetService.getBudgets();
         const category = 'Budget';
@@ -107,6 +137,10 @@ class TransactionController {
         await this.view.homeView.renderBudgetList(budgets, category);
     };
 
+    /**
+     * Add a budget and display the new budget list.
+     * @param {object} budget
+     */
     saveBudget = async (budget) => {
         await this.service.budgetService.addBudget(budget);
         this.view.snackbar.showSnackBar('success', ADD_BUDGET_MESSAGE.ADD_BUDGET_SUCCESS);
@@ -123,6 +157,9 @@ class TransactionController {
         this.view.budgetView.addEventAddBudget(this.saveBudget);
     }
 
+    /**
+     * Show a popup when click add budget.
+     */
     addBudget = () => {
         this.view.budgetView.renderBudgetPopup();
     };
