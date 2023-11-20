@@ -1,6 +1,6 @@
 ## Overview
 
--   This document provides the requirement for JavaScript Big Practice.
+-   This document provides the requirement for JavaScript Practice.
 
 ## Design on Figma
 
