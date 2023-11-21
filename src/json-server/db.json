@@ -1,83 +1,48 @@
 {
-    "accounts": [
-        {
-            "id": 1,
-            "email": "phuongle1@gmail.com",
-            "password": "phuongle123"
-        }
-    ],
-    "budget": [
-        {
-            "date": "2023-11-15",
-            "note": "Tiền ăn vặt",
-            "inflow": 20000000,
-            "category": "Budget",
-            "id": 8
-        },
-        {
-            "date": "2023-11-18",
-            "note": "Tiền thưởng",
-            "inflow": 500000,
-            "category": "Budget",
-            "id": 9
-        },
-        {
-            "date": "2023-11-14",
-            "note": "Tiền NCKH",
-            "inflow": 500000,
-            "category": "Budget",
-            "id": 10
-        },
-        {
-            "date": "2023-11-22",
-            "note": "Tiền thưởng sinh viên giỏi",
-            "inflow": 500000,
-            "category": "Budget",
-            "id": 11
-        },
-        {
-            "date": "2023-11-19",
-            "note": "",
-            "inflow": 50000,
-            "category": "Budget",
-            "id": 12
-        },
-        {
-            "date": "2023-11-19",
-            "note": "",
-            "inflow": 20000,
-            "category": "Budget",
-            "id": 13
-        },
-        {
-            "date": "2023-11-19",
-            "note": "",
-            "inflow": 50000,
-            "category": "Budget",
-            "id": 14
-        }
-    ],
-    "transaction": [
-        {
-            "id": 27,
-            "category": "Ăn Uống",
-            "date": "2023-11-18",
-            "note": "Bánh Canh",
-            "outflow": 20000
-        },
-        {
-            "id": 29,
-            "category": "Ăn Uống",
-            "date": "2023-11-25",
-            "note": "Bánh Bèo",
-            "outflow": 20000
-        },
-        {
-            "id": 30,
-            "category": "Ăn Uống",
-            "date": "2023-11-25",
-            "note": "Mỳ Quảng Trứng",
-            "outflow": 30000
-        }
-    ]
+  "accounts": [
+    {
+      "id": 1,
+      "email": "phuongle1@gmail.com",
+      "password": "phuongle123"
+    }
+  ],
+  "budget": [
+    {
+      "date": "2023-11-15",
+      "note": "Salary",
+      "inflow": 20000000,
+      "category": "Budget",
+      "id": 8
+    },
+    {
+      "date": "2023-11-21",
+      "note": "",
+      "inflow": 50000,
+      "category": "Budget",
+      "id": 9
+    }
+  ],
+  "transaction": [
+    {
+      "id": 30,
+      "category": "Food",
+      "date": "2023-11-28",
+      "note": "Noodles",
+      "outflow": 30000
+    },
+    {
+      "id": 31,
+      "category": "Food",
+      "date": "2023-11-25",
+      "note": "Bread",
+      "outflow": 25000
+    },
+    {
+      "id": 32,
+      "category": "Food",
+      "date": "2023-11-04",
+      "note": "Soup",
+      "outflow": 20000
+    }
+  ]
 }

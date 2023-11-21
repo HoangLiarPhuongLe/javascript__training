@@ -17,7 +17,7 @@ class ApiService {
         }
     }
 
-    async getTransactionById(id) {
+    async getById(id) {
         const response = await fetch(`${this.baseUrl}${this.path}/${id}`);
 
         const data = response.json();
@@ -25,9 +25,9 @@ class ApiService {
         return data;
     }
 
-    async addTransaction(transaction) {
+    async post(payload) {
         // Log the JSON representation of the transaction object
-        console.log('JSON:', JSON.stringify(transaction));
+        console.log('JSON:', JSON.stringify(payload));
 
         try {
             // Make a POST request to the API endpoint with the transaction object as the request body
@@ -36,7 +36,7 @@ class ApiService {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(transaction),
+                body: JSON.stringify(payload),
             });
 
             // Parse the response as JSON
@@ -45,23 +45,23 @@ class ApiService {
             // Return the parsed JSON data
             return data;
         } catch (error) {
-            console.error('Error adding transaction:', error);
-            throw new Error('Failed to add transaction.');
+            console.error('Error adding payload:', error);
+            throw new Error('Failed to add payload.');
         }
     }
 
-    async updateTransaction(transaction) {
+    async put(payload) {
         // Log the JSON representation of the transaction object
-        console.log('JSON:', JSON.stringify(transaction));
+        console.log('JSON:', JSON.stringify(payload));
 
         try {
             // Make a POST request to the API endpoint with the transaction object as the request body
-            const response = await fetch(`${this.baseUrl}${this.path}/${transaction.id}`, {
+            const response = await fetch(`${this.baseUrl}${this.path}/${payload.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(transaction),
+                body: JSON.stringify(payload),
             });
 
             // Parse the response as JSON
@@ -70,40 +70,15 @@ class ApiService {
             // Return the parsed JSON data
             return data;
         } catch (error) {
-            console.error('Error adding transaction:', error);
-            throw new Error('Failed to add transaction.');
+            console.error('Error editing payload:', error);
+            throw new Error('Failed to edit payload.');
         }
     }
 
-    async deleteTransactionById(id) {
+    async delete(id) {
         await fetch(`${this.baseUrl}${this.path}/${id}`, {
             method: 'DELETE',
         });
-    }
-
-    async addBudget(budget) {
-        // Log the JSON representation of the transaction object
-        console.log('JSON:', JSON.stringify(budget));
-
-        try {
-            // Make a POST request to the API endpoint with the transaction object as the request body
-            const response = await fetch(`${this.baseUrl}${this.path}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(budget),
-            });
-
-            // Parse the response as JSON
-            const data = await response.json();
-
-            // Return the parsed JSON data
-            return data;
-        } catch (error) {
-            console.error('Error adding budget:', error);
-            throw new Error('Failed to add budget.');
-        }
     }
 }
 

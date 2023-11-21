@@ -33,7 +33,7 @@ class TransactionService {
     }
 
     getTransactionById = async (id) => {
-        const data = await this.api.getTransactionById(id);
+        const data = await this.api.getById(id);
         const transaction = new Transaction(data);
         return transaction;
     };
@@ -44,7 +44,7 @@ class TransactionService {
      */
     addTransaction = async (data) => {
         const transaction = new Transaction(data);
-        await this.api.addTransaction(transaction);
+        await this.api.post(transaction);
         this.transactionList.push(transaction);
     };
 
@@ -55,7 +55,7 @@ class TransactionService {
     updateTransaction = async (data) => {
         const transaction = new Transaction(data);
 
-        await this.api.updateTransaction(transaction);
+        await this.api.put(transaction);
         this.transactionList = this.transactionList.map((item) => {
             if (item.id.toString() === transaction.id) {
                 return transaction;
@@ -69,7 +69,7 @@ class TransactionService {
      * @param {Object} transaction
      */
     deleteTransaction = async (id) => {
-        await this.api.deleteTransactionById(id);
+        await this.api.delete(id);
         const index = this.transactionList.findIndex((item) => item.id == id);
 
         this.transactionList.splice(index, 1);

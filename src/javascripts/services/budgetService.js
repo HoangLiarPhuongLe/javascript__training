@@ -38,7 +38,7 @@ class BudgetService {
      */
     addBudget = async (data) => {
         const budget = new Budget(data);
-        await this.api.addBudget(budget);
+        await this.api.post(budget);
         this.budgetList.push(budget);
     };
 }
